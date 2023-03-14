@@ -24,8 +24,8 @@ class PaisesModel extends Model{
     protected $validationMessages = [];
     protected $skipValidation    = false;
 
-    public function obtenerClientes(){
-        $this->select('clientes.*');
+    public function obtenerPaises(){
+        $this->select('paises.*');
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
         return $datos;
     }
@@ -40,6 +40,13 @@ class PaisesModel extends Model{
         $this->select('clientes.*');
         $this->where('id_cliente', $id);
         $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
+        return $datos;
+    }
+
+    public function traer_Paises($id){
+        $this->select('paises.*');
+        $this->where('id', $id);
+        $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada
         return $datos;
     }
 }

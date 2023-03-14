@@ -1,15 +1,19 @@
-
-.titulo{
+.titulo {
     text-align: center;
     color: #342C6E;
+    font-family: cursive;
+    font-size: 25px;
 }
 
-.regresar_btn{
+.regresar_btn {
     height: 2.5rem;
     width: 7rem;
-    
+    text-align: center;
 }
 
-.table-responsive{
+.table-responsive {
+    /* font-family: cursive !important; */
     margin: 30px;
+    text-align: center;
+    font-size: 25px;
 }

@@ -13,7 +13,7 @@ class CargosModel extends Model{
     protected $returnType     = 'array';  /* forma en que se retornan los datos */
     protected $useSoftDeletes = false; /* si hay eliminacion fisica de registro */
 
-    protected $allowedFields = ['codigo','nombre','estado','fecha_crea']; /* relacion de campos de la tabla */
+    protected $allowedFields = ['nombre','estado','fecha_crea']; /* relacion de campos de la tabla */
 
     protected $useTimestamps = true; /*tipo de tiempo a utilizar */
     protected $createdField  = 'fecha_crea'; /*fecha automatica para la creacion */
@@ -24,8 +24,8 @@ class CargosModel extends Model{
     protected $validationMessages = [];
     protected $skipValidation    = false;
 
-    public function obtenerClientes(){
-        $this->select('clientes.*');
+    public function obtenerCargos(){
+        $this->select('cargos.*');
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
         return $datos;
     }

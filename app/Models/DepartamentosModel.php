@@ -13,7 +13,7 @@ class DepartamentosModel extends Model{
     protected $returnType     = 'array';  /* forma en que se retornan los datos */
     protected $useSoftDeletes = false; /* si hay eliminacion fisica de registro */
 
-    protected $allowedFields = ['codigo','nombre','id_pais','estado','fecha_crea']; /* relacion de campos de la tabla */
+    protected $allowedFields = ['nombre','id_pais','estado','fecha_crea']; /* relacion de campos de la tabla */
 
     protected $useTimestamps = true; /*tipo de tiempo a utilizar */
     protected $createdField  = 'fecha_crea'; /*fecha automatica para la creacion */
@@ -24,10 +24,12 @@ class DepartamentosModel extends Model{
     protected $validationMessages = [];
     protected $skipValidation    = false;
 
-    public function obtenerClientes(){
-        $this->select('clientes.*');
+    public function obtenerDepartamento(){
+        $this->select('departamentos.*,paises.nombre as nombre_pais');
+        $this->join('paises','paises.id = departamentos.id_pais');
+        $this->where('departamentos.estado', 'A');
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
-        return $datos;
+        return $datos;  
     }
 
     
