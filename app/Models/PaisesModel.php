@@ -49,4 +49,5 @@ class PaisesModel extends Model{
         $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
         return $datos;
     }
+
 }
