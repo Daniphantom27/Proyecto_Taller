@@ -46,7 +46,7 @@ class PaisesModel extends Model{
     public function traer_Paises($id){
         $this->select('paises.*');
         $this->where('id', $id);
-        $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada
+        $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
         return $datos;
     }
 }

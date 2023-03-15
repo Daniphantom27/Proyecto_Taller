@@ -33,32 +33,32 @@ class Paises extends BaseController
         }
     }
 
-    public function buscar_Paises($id)
-    {
-        $returnData = array();
-        $pais_ = $this->paises->traer_Paises($id);
-        if (!empty($pais_)) {
-            array_push($returnData, $pais_);
-        }
-        echo json_encode($returnData);
-    }
+   public function buscar_Paises($id)
+   {
+       $returnData = array();
+       $paises_ = $this->paises->traer_Paises($id);
+       if (!empty($paises_)) {
+           array_push($returnData, $paises_);
+       }
+       echo json_encode($returnData);
+   }
 
-    public function insertar()
-    {
-        $tp=$this->request->getPost('tp');
-        if ($this->request->getMethod() == "post") {
-            if ($tp == 1) {
-                $this->paises->save([
-                    'codigo' => $this->request->getPost('codigo'),
-                    'nombre' => $this->request->getPost('nombre')
-                ]);
-            } else {
-                $this->paises->update($this->request->getPost('codigo'),[                    
-                    'nombre'=> $this->request->getPost('nombre')
-                ]);
-            }
-            return redirect()->to(base_url('/paises'));
-        }
-    }
+   public function insertar()
+   {
+       $tp=$this->request->getPost('tp');
+       if ($this->request->getMethod() == "post") {
+           if ($tp == 1) {
+               $this->paises->save([
+                   'codigo' => $this->request->getPost('codigo'),
+                   'nombre' => $this->request->getPost('nombre')
+               ]);
+           } else {
+               $this->paises->update($this->request->getPost('codigo'),[                    
+                   'nombre' => $this->request->getPost('nombre')
+               ]);
+           }
+           return redirect()->to(base_url('/paises'));
+       }
+   }
 
 }
