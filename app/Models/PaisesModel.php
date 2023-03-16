@@ -50,4 +50,14 @@ class PaisesModel extends Model{
         return $datos;
     }
 
+    public function eliminarPaises ($id,$estado){
+        $datos = $this->update($id,['estado'=>$estado]);
+        return $datos;
+    }
+
+    public function eliminados_paises(){
+        $this->select('paises.*');
+        $this->where('estado',"E")->findAll();
+    }
+
 }

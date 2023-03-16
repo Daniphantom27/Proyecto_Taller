@@ -8,7 +8,7 @@
 
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
-    <button type="button" class="btn btn-secondary">Eliminados</button>
+    <a href="<?php echo base_url('eliminados_paises'); ?>"  class="btn btn-secondary regresar_Btn">Eliminados</a>
     <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
   </div>
   <div class="table-responsive">
@@ -32,7 +32,7 @@
             <td><button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo $dato['id'] . ',' . 2 ?>);">
                 <i class="bi bi-person-plus"></i>
               </button>
-              <button type="button" class="btn btn-danger" href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'E'; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" ><i class="bi bi-trash3"></i></button>
+              <button type="button" class="btn btn-danger" href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma" ><i class="bi bi-trash3"></i></button>
             </td>
           </tr>
         <?php } ?>
@@ -40,7 +40,7 @@
     </table>
   </div>
   <!-- Modal -->
-  <form method="POST" action="<?php echo base_url('/paises/insertarPaises'); ?> " autocomplete="off">
+  <form method="POST" action="<?php echo base_url('/paises/insertarPaises'); ?>" autocomplete="off">
 
     <div class="modal fade" id="añadirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -84,7 +84,7 @@
                     <p>Seguro Desea Eliminar éste Registro?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary close" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary close" data-bs-dismiss="modal">No</button>
                     <a class="btn btn-danger btn-ok">Si</a>
                 </div>
             </div>
@@ -120,5 +120,13 @@
       }
     };
   </script>
+
+  <script>
+    $('#modal-confirma').on('show.bs.modal', function(e){
+      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    })
+
+  </script>
+
 
 </body>

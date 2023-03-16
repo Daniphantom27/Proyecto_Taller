@@ -16,3 +16,73 @@ in SYSTEMPATH\Model.php on line 391.
  5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cargos))
  6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:03:20 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminarPaises('11', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:04:24 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('11', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:05:41 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('11', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:08:40 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('2', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:08:50 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('11', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:10:25 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('11', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:14:04 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('2', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:16:48 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('11', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 14:17:49 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(66): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('1', 'E')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-16 15:18:14 --> Call to undefined method App\Models\PaisesModel::elimina_Paises
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Paises.php(76): CodeIgniter\Model->__call('elimina_Paises', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminar('5', 'I')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -33,36 +33,49 @@ class Paises extends BaseController
     //     }
     // }
 
-   public function buscar_Paises($id)
-   {
-       $returnData = array();
-       $paises_ = $this->paises->traer_Paises($id);
-       if (!empty($paises_)) {
-           array_push($returnData, $paises_);
-       }
-       echo json_encode($returnData);
-   }
+    public function buscar_Paises($id)
+    {
+        $returnData = array();
+        $paises_ = $this->paises->traer_Paises($id);
+        if (!empty($paises_)) {
+            array_push($returnData, $paises_);
+        }
+        echo json_encode($returnData);
+    }
 
-   public function insertarPaises()
-   {
-       $tp=$this->request->getPost('tp');
-       if ($this->request->getMethod() == "post") {
-           if ($tp == 1) {
-               $this->paises->save([
-                   'codigo' => $this->request->getPost('codigo'),
-                   'nombre' => $this->request->getPost('nombre')
-               ]);  
-           }else {
-               $this->paises->update($this->request->getPost('id'),[                    
-                   'nombre' => $this->request->getPost('nombre'),
-                   'codigo' => $this->request->getPost('codigo'),
-               ]);
-           }
-           return redirect()->to(base_url('/paises'));
-       }
-   }
+    public function insertarPaises()
+    {
+        $tp = $this->request->getPost('tp');
+        if ($this->request->getMethod() == "post") {
+            if ($tp == 1) {
+                $this->paises->save([
+                    'codigo' => $this->request->getPost('codigo'),
+                    'nombre' => $this->request->getPost('nombre')
+                ]);
+            } else {
+                $this->paises->update($this->request->getPost('id'), [
+                    'nombre' => $this->request->getPost('nombre'),
+                    'codigo' => $this->request->getPost('codigo'),
+                ]);
+            }
+            return redirect()->to(base_url('/paises'));
+        }
+    }
 
-   
+    public function eliminados()
+    {
+        $paises = $this->paises->where('estado','E')->findAll();
+        $data = ['titulo' => 'PAISES ELIMINADOS', 'titulo' => 'Proyecto Taller', 'nombre' => 'Daniel Sanchez', 'datos' => $paises];
+
+        echo view('/principal/header', $data);
+        echo view('/paises/eliminados', $data);
+       
+    }
+
+    public function eliminar($id,$estado){
+        $paises_ = $this->paises->eliminarPaises($id,$estado);
+        return redirect()->to(base_url('/paises'));
+    }
 
 
 }
