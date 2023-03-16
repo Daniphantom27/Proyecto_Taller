@@ -26,7 +26,7 @@ class Municipios extends BaseController
             //echo view('/principal/principal',$data); //mostramos la vista desde el controlador y le enviamos la data necesaria, en este caso, estamos enviando el titulo
         }    
         
-        public function insertarMun(){
+        /* public function insertarMun(){
             if($this->request -> getMethod() == 'post'){
                 $this->municipios->save([
                     'id_departamento'=>$this->request->getPost('departamento'),   
@@ -34,6 +34,36 @@ class Municipios extends BaseController
                 ]);
                 return redirect()->to(base_url('/municipios'));
             }
+        } */
+
+        public function buscar_Municipios($id)
+        {
+            $returnData = array();
+            $municipios_ = $this->municipios->traer_Municipios($id);
+            if (!empty($municipios_)) {
+                array_push($returnData, $municipios_);
+            }
+            echo json_encode($returnData);
         }
+     
+        public function insertarMunicipios()
+        {
+            $tp=$this->request->getPost('tp');
+            if ($this->request->getMethod() == "post") {
+                if ($tp == 1) {
+                    $this->municipios->save([
+                        'departamento' => $this->request->getPost('id_departamento'),
+                        'nombre' => $this->request->getPost('nombre')
+                    ]);  
+                }else {
+                    $this->municipios->update($this->request->getPost('id'),[                    
+                        'departamento' => $this->request->getPost('id_departamento'),
+                        'nombre' => $this->request->getPost('nombre'),
+                    ]);
+                }
+                return redirect()->to(base_url('/municipios'));
+            }
+        }
+     
 
 }

@@ -1,0 +1,59 @@
+CRITICAL - 2023-03-15 23:01:10 --> Call to undefined method App\Models\MunicipiosModel::traer_Empleados
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Empleados.php(50): CodeIgniter\Model->__call('traer_Empleados', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_Empleados('1')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-15 23:01:11 --> Call to undefined method App\Models\MunicipiosModel::traer_Empleados
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Empleados.php(50): CodeIgniter\Model->__call('traer_Empleados', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_Empleados('1')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-15 23:01:11 --> Call to undefined method App\Models\MunicipiosModel::traer_Empleados
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Empleados.php(50): CodeIgniter\Model->__call('traer_Empleados', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_Empleados('1')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-15 23:01:24 --> Call to undefined method App\Models\MunicipiosModel::traer_Empleados
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Empleados.php(50): CodeIgniter\Model->__call('traer_Empleados', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_Empleados('1')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-15 23:04:44 --> mysqli_sql_exception: Unknown table 'bd_taller.cargos' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(63): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(50): App\Models\EmpleadosModel->traer_Empleados('1')
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->buscar_Empleados('1')
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-15 23:04:44 --> Unknown table 'bd_taller.cargos'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.*, `municipios`.*
+FROM `empleados`
+WHERE `id` = :id:
+AND `id` = :id.1:
+AND `id` = :id.2:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\EmpleadosModel.php(63): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Empleados.php(50): App\Models\EmpleadosModel->traer_Empleados('1')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_Empleados('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

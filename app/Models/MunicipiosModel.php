@@ -38,9 +38,16 @@ class MunicipiosModel extends Model{
         $this->set('nombre', $nombre);
         $this->where('id_cargo', $id);
     } */
-    public function buscaCargo($id){
+  /*   public function buscaCargo($id){
         $this->select('clientes.*');
         $this->where('id_cliente', $id);
+        $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
+        return $datos;
+    } */
+
+    public function traer_Municipios($id){
+        $this->select('municipios.*');
+        $this->where('id', $id);
         $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
         return $datos;
     }

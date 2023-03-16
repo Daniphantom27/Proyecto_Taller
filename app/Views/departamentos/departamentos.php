@@ -1,13 +1,14 @@
 <head>
     <link rel="stylesheet" href="<?php echo base_url('/css/vistas.css'); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
 </head>
 
 <body>
     <h1 class="titulo"><?php echo "Administrar Departamentos"; ?></h1>
 
     <div>
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaDpto(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaDepartamentos(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
         <button type="button" class="btn btn-secondary">Eliminados</button>
         <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
     </div>
@@ -29,7 +30,8 @@
                         <td><?php echo $dato['nombre_pais']; ?></td>
                         <td><?php echo $dato['nombre']; ?></td>
                         <td><?php echo $dato['estado']; ?></td>
-                        <td><button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#añadirModal" onclick="seleccionaDpto(<?php echo $dato['id'] . ',' . 2 ?>);"><i class="bi bi-person-plus"></i></button>
+                        <td><button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#añadirModal" onclick="seleccionaDepartamentos(<?php echo $dato['id'] . ',' . 2 ?>);">
+                        <i class="bi bi-person-plus"></i></button>
                             <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
                         </td>
                     </tr>
@@ -38,9 +40,10 @@
         </table>
     </div>
 
-    <form method="POST" action="<?php echo base_url('/departamentos/insertarDpto'); ?> " autocomplete="off">
+    <!-- Modal -->
+    <form method="POST" action="<?php echo base_url('/departamentos/insertarDepartamentos'); ?> " autocomplete="off">
 
-        <div class="modal fade" id="exampleModal" id="añadirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="añadirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -76,9 +79,9 @@
     </form>
 
     <script>
-        function seleccionaDpto(id, tp) {
+        function seleccionaDepartamentos(id, tp) {
             if (tp == 2) {
-                dataURL = "<?php echo base_url('/departamentos/buscar_Dpto'); ?>" + "/" + id;
+                dataURL = "<?php echo base_url('/departamentos/buscar_Departamentos'); ?>" + "/" + id;
                 $.ajax({
                     type: "POST",
                     url: dataURL,

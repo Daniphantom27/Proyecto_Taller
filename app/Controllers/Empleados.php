@@ -30,7 +30,7 @@ class Empleados extends BaseController
             //echo view('/principal/principal',$data); //mostramos la vista desde el controlador y le enviamos la data necesaria, en este caso, estamos enviando el titulo
         }    
         
-        public function insertar(){
+    /*     public function insertar(){
 
             if($this->request -> getMethod() == 'post'){
                 $this->empleados->save([
@@ -42,6 +42,43 @@ class Empleados extends BaseController
                 ]);
                 return redirect()->to(base_url('/empleados'));
             }
+        } */
+
+        public function buscar_Empleados($id)
+        {
+            $returnData = array();
+            $empleados = $this->empleados->traer_Empleados($id);
+            if (!empty($empleados)) {
+                array_push($returnData, $empleados);
+            }
+            echo json_encode($returnData);
         }
+     
+        public function insertarEmpleados()
+        {
+            $tp=$this->request->getPost('tp');
+            if ($this->request->getMethod() == "post") {
+                if ($tp == 1) {
+                    $this->empleados->save([
+                        'municipio' => $this->request->getPost('id_municipio'),
+                        'nombre' => $this->request->getPost('nombre'),
+                        'apellido' => $this->request->getPost('apellidos'),
+                        'nacimiento' => $this->request->getPost('nacimiento'),
+                        'cargo' => $this->request->getPost('id_cargo')
+                    ]);  
+                }else {
+                    $this->empleados->update($this->request->getPost('id'),[                    
+                        'municipio' => $this->request->getPost('id_municipio'),
+                        'nombre' => $this->request->getPost('nombre'),
+                        'apellido' => $this->request->getPost('apellidos'),
+                        'nacimiento' => $this->request->getPost('nacimiento'),
+                        'cargo' => $this->request->getPost('id_cargo')
+                    ]);
+                }
+                return redirect()->to(base_url('/empleados'));
+            }
+        }
+     
+
 
 }

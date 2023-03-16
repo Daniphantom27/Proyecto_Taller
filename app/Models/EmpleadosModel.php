@@ -28,7 +28,7 @@ class EmpleadosModel extends Model{
     public function obtenerEmpleados(){
 
      //Cargos
-        $this->select('empleados.*,cargos.nombre as nombre_cargo, municipios.nombre as nombreMuni');
+        $this->select('empleados.*,cargos.nombre as nombre_cargo, municipios.nombre as nombre_municipio');
         $this->join('cargos','cargos.id = empleados.id_cargo');
         $this->join('municipios','municipios.id = empleados.id_municipio');
         $this->where('empleados.estado', 'A');
@@ -43,10 +43,18 @@ class EmpleadosModel extends Model{
         $this->set('nombre', $nombre);
         $this->where('id_cargo', $id);
     } */
-    public function buscaCargo($id){
+   /*  public function buscaCargo($id){
         $this->select('clientes.*');
         $this->where('id_cliente', $id);
         $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
         return $datos;
+    } */
+
+    public function traer_Empleados($id){
+        $this->select('empleados.*');
+        $this->where('id', $id);
+        $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
+        return $datos;
     }
+
 }

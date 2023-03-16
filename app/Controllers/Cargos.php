@@ -21,13 +21,42 @@ class Cargos extends BaseController
             //echo view('/principal/principal',$data); //mostramos la vista desde el controlador y le enviamos la data necesaria, en este caso, estamos enviando el titulo
         }     
 
-        public function insertarCargs(){
+       /*  public function insertarCargs(){
             if($this->request -> getMethod() == 'post'){
                 $this->cargos->save([
                     'nombre'=>$this->request->getPost('nombre')
                 ]);
                 return redirect()->to(base_url('/cargos'));
             }
+        } */
+
+        public function buscar_Cargos($id)
+        {
+            $returnData = array();
+            $cargos_ = $this->cargos->traer_Cargos($id);
+            if (!empty($cargos_)) {
+                array_push($returnData, $cargos_);
+            }
+            echo json_encode($returnData);
         }
+     
+        public function insertarCargos()
+        {
+            $tp=$this->request->getPost('tp');
+            if ($this->request->getMethod() == "post") {
+                if ($tp == 1) {
+                    $this->cargos->save([
+                        'nombre' => $this->request->getPost('nombre')
+                    ]);  
+                }else {
+                    $this->cargos->update($this->request->getPost('id'),[                    
+                        'nombre' => $this->request->getPost('nombre'),
+                    ]);
+                }
+                return redirect()->to(base_url('/cargos'));
+            }
+        }
+     
+
 
 }

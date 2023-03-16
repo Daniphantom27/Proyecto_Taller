@@ -1,6 +1,4 @@
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
   <link rel="stylesheet" href="<?php echo base_url('/css/vistas.css'); ?>">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
@@ -10,7 +8,7 @@
 
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
-    <button type="button" class="btn btn-secondary" id="eliminar" onclick="EliminarPais">Eliminados</button>
+    <button type="button" class="btn btn-secondary">Eliminados</button>
     <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
   </div>
   <div class="table-responsive">

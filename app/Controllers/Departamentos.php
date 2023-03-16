@@ -19,7 +19,7 @@ class Departamentos extends BaseController
     public function index()
     {
         $departamentos = $this->departamentos->obtenerDepartamento();
-        $paises = $this->paises->where('estado', "A")->findAll();
+        $paises = $this->paises->findAll();
         $data = ['titulo' => 'Proyecto Taller', 'nombre' => 'Daniel Sanchez', 'departamentos' => $departamentos, 'paises' => $paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
         echo view('/principal/header', $data);
         echo view('/departamentos/departamentos', $data);
@@ -37,28 +37,28 @@ class Departamentos extends BaseController
     //     }
     // }
 
-    public function buscar_Dpto($id)
+    public function buscar_Departamentos($id)
     {
         $returnData = array();
-        $paises_ = $this->departamentos->traer_Dpto($id);
+        $departamentos_ = $this->departamentos->traer_Departamentos($id);
         if (!empty($departamentos_)) {
             array_push($returnData, $departamentos_);
         }
         echo json_encode($returnData);
     }
 
-    public function insertarDpto()
+    public function insertarDepartamentos()
     {
         $tp = $this->request->getPost('tp');
         if ($this->request->getMethod() == "post") {
             if ($tp == 1) {
                 $this->departamentos->save([
-                    'id_pais' => $this->request->getPost('pais'),
+                    'pais' => $this->request->getPost('id_pais'),
                     'nombre' => $this->request->getPost('nombre')
                 ]);
             } else {
                 $this->departamentos->update($this->request->getPost('id'), [
-                    'id_pais' => $this->request->getPost('pais'),
+                    'pais' => $this->request->getPost('id_pais'),
                     'nombre' => $this->request->getPost('nombre'),
                 ]);
             }
