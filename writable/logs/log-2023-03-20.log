@@ -1,0 +1,11 @@
+CRITICAL - 2023-03-20 22:05:50 --> Undefined variable $data
+in APPPATH\Views\paises\eliminados.php on line 36.
+ 1 APPPATH\Views\paises\eliminados.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\paises\\eliminados.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\paises\\eliminados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/paises/eliminados', [], true)
+ 5 APPPATH\Controllers\Paises.php(71): view('/paises/eliminados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->eliminados('11', 'A')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

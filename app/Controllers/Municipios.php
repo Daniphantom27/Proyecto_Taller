@@ -52,12 +52,12 @@ class Municipios extends BaseController
             if ($this->request->getMethod() == "post") {
                 if ($tp == 1) {
                     $this->municipios->save([
-                        'departamento' => $this->request->getPost('id_departamento'),
+                        'id_departamento' => $this->request->getPost('departamento'),
                         'nombre' => $this->request->getPost('nombre')
                     ]);  
                 }else {
                     $this->municipios->update($this->request->getPost('id'),[                    
-                        'departamento' => $this->request->getPost('id_departamento'),
+                        'id_departamento' => $this->request->getPost('departamento'),
                         'nombre' => $this->request->getPost('nombre'),
                     ]);
                 }

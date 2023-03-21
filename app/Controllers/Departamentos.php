@@ -53,12 +53,12 @@ class Departamentos extends BaseController
         if ($this->request->getMethod() == "post") {
             if ($tp == 1) {
                 $this->departamentos->save([
-                    'pais' => $this->request->getPost('id_pais'),
+                    'id_pais' => $this->request->getPost('pais'),
                     'nombre' => $this->request->getPost('nombre')
                 ]);
             } else {
                 $this->departamentos->update($this->request->getPost('id'), [
-                    'pais' => $this->request->getPost('id_pais'),
+                    'id_pais' => $this->request->getPost('pais'),
                     'nombre' => $this->request->getPost('nombre'),
                 ]);
             }

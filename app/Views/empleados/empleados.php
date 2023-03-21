@@ -67,9 +67,8 @@
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nacimiento:</label>
-                <input type="text" name="nacimiento" id="nacimiento" class="form-control" id="message-text">
-                <!-- <select name="nacimiento" id="nacimiento" class="form-select">
-                  <option selected>Seleccionar Nacimiento</option>
+                 <select name="nacimiento" id="nacimiento" class="form-select">
+                 <option selected>Seleccionar Nacimiento</option>
                   <option value="1">2004</option>
                   <option value="2">2003</option>
                   <option value="3">2002</option>
@@ -90,7 +89,7 @@
                   <option value="18">1987</option>
                   <option value="19">1986</option>
                   <option value="20">1985</option>
-                </select> -->
+                </select> 
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Cargo:</label>
@@ -140,7 +139,7 @@
             $("#cargo").val(rs[0]['id_cargo']);
             $("#nombre").val(rs[0]['nombre']);
             $("#apellido").val(rs[0]['apellidos']);
-            $("#nacimiento").val(rs[0]['nacimiento']);
+            $("#nacimiento").val(rs[1]['nacimiento']);
             $("#btn_Guardar").text('Actualizar');
             $("#titulo").text('Editar Empleado');
             $("#AgregarEmpleados").modal("show");
