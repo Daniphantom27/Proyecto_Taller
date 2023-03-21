@@ -65,4 +65,27 @@ class Departamentos extends BaseController
             return redirect()->to(base_url('/departamentos'));
         }
     }
+
+    public function eliminados()
+    {
+        $departamentos = $this->departamentos->eliminados_departamentos();
+        $data = ['titulo' => 'DEPARTAMENTOS ELIMINADOS', 'titulo' => 'Proyecto Taller', 'nombre' => 'Daniel Sanchez', 'departamentos' => $departamentos];
+
+        echo view('/principal/header', $data);
+        echo view('/departamentos/eliminados', $data);
+        
+    }
+
+         public function eliminar($id,$estado){
+         $departamentos_= $this->departamentos->eliminarDepartamentos($id,$estado);
+         return redirect()->to(base_url('/departamentos'));
+     }
+
+     public function eliminarD($id, $estado)
+     {
+        $this->departamentos->eliminarDepartamentos($id,$estado);
+         return redirect()->to(base_url('/departamentos/eliminados'));
+     }
+
+
 }

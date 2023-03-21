@@ -8,7 +8,7 @@
 
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#agregarCargo" onclick="seleccionaCargos(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
-    <button type="button" class="btn btn-secondary">Eliminados</button>
+    <a href="<?php echo base_url('eliminados_cargos'); ?>"  class="btn btn-secondary regresar_Btn">Eliminados</a>
     <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
   </div>
   <div class="table-responsive">
@@ -29,7 +29,7 @@
             <td><?php echo $dato['estado']; ?></td>
             <td><button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#agregarCargo" onclick="seleccionaCargos(<?php echo $dato['id'] . ',' . 2 ?>);">
                 <i class="bi bi-person-plus"></i></button>
-              <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+              <button type="button" class="btn btn-danger" href="#" data-href="<?php echo base_url('/cargos/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma" ><i class="bi bi-trash3"></i></button>
             </td>
           </tr>
         <?php } ?>
@@ -66,6 +66,26 @@
     </div>
   </form>
 
+  <!-- Modal Confirma Eliminar -->
+  <div class="modal fade" id="modal-confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div style="background: linear-gradient(90deg, #838da0, #b4c1d9);" class="modal-content">
+                <div style="text-align:center;" class="modal-header">
+                    <h5 style="color:#98040a;font-size:20px;font-weight:bold;" class="modal-title" id="exampleModalLabel">Eliminación de Registro</h5>
+                   
+                </div>
+                <div style="text-align:center;font-weight:bold;" class="modal-body">
+                    <p>Seguro Desea Eliminar éste Registro?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary close" data-bs-dismiss="modal">No</button>
+                    <a class="btn btn-danger btn-ok">Si</a>
+                </div>
+            </div>
+        </div>
+    </div>
+       <!-- Modal Elimina -->
+
   <script>
     function seleccionaCargos(id, tp) {
       if (tp == 2) {
@@ -90,6 +110,13 @@
         $("#titulo").text('Agregar Cargo');
       }
     };
+  </script>
+
+<script>
+    $('#modal-confirma').on('show.bs.modal', function(e){
+      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    })
+
   </script>
 
 </body>

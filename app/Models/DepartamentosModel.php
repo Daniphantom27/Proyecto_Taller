@@ -52,4 +52,19 @@ class DepartamentosModel extends Model{
         return $datos;
     }
 
+    public function eliminarDepartamentos ($id,$estado){
+        $datos = $this->update($id,['estado'=>$estado]);
+        return $datos;
+    }
+
+    public function eliminados_departamentos()
+    {
+        $this->select('departamentos.*,paises.nombre as nombre_pais');
+        $this->join('paises','paises.id = departamentos.id_pais');
+        $this->where('departamentos.estado', "E");
+        $datos = $this->findAll();
+        return $datos;
+    }
+
+
 }

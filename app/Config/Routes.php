@@ -31,6 +31,10 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Principal::index');
 $routes->get('eliminados_paises', 'paises::eliminados');
+$routes->get('eliminados_departamentos', 'departamentos::eliminados');
+$routes->get('eliminados_municipios', 'municipios::eliminados');
+$routes->get('eliminados_departamentos', 'departamentos::eliminados');
+$routes->get('eliminados_cargos', 'cargos::eliminados');
 
 
 

@@ -50,4 +50,14 @@ class CargosModel extends Model{
         return $datos;
     }
 
+    public function eliminarCargos ($id,$estado){
+        $datos = $this->update($id,['estado'=>$estado]);
+        return $datos;
+    }
+
+    public function eliminados_cargos(){
+        $this->select('cargos.*');
+        $this->where('estado',"E")->findAll();
+    }
+
 }

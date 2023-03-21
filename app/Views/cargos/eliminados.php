@@ -5,7 +5,7 @@
 </head>
 
 <body>
-<h1 class="titulo"><?php echo "Departamentos Eliminados"; ?></h1>
+<h1 class="titulo"><?php echo "Cargos Eliminados"; ?></h1>
 
   <div class="card" style="width:72rem;">
     <div>
@@ -15,7 +15,7 @@
       <div class="row col-sm-12">
         <div class="col-md-5ths col-lg-5ths col-xs-6 col-sm-5"></div>
         <div class="col-md-5ths col-lg-5ths col-xs-6 col-sm-2">
-          <a href="<?php echo base_url('/departamentos'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
+          <a href="<?php echo base_url('/cargos'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
         </div>
       </div>
 
@@ -25,20 +25,18 @@
           <thead>
             <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
               <th>Id</th>
-              <th>Pais</th>
               <th>Nombre</th>
               <th>Estado</th>
               <th colspan="2">Acciones</th>
             </tr>
           </thead>
           <tbody style="font-family:Arial;font-size:12px;">
-            <?php foreach ($departamentos as $dato) { ?>
+            <?php foreach ($datos as $dato) { ?>
               <tr>
                 <td><?php echo $dato['id']; ?></td>
-                <td><?php echo $dato['nombre_pais']; ?></td>
                 <td><?php echo $dato['nombre']; ?></td>
                 <td><?php echo $dato['estado']; ?></td>
-                <td title="Activar Registro" data-bs-toggle="modal" data-bs-target="#modal-confirma" href="#" data-href="<?php echo base_url('/departamentos/eliminarD') . '/' . $dato['id'] . '/' . 'A'; ?>"><i class="bi bi-arrow-clockwise"></i></td>
+                <td title="Activar Registro" data-bs-toggle="modal" data-bs-target="#modal-confirma" href="#" data-href="<?php echo base_url('/cargos/eliminarC') . '/' . $dato['id'] . '/' . 'A'; ?>"><i class="bi bi-arrow-clockwise"></i></td>
               </tr> 
             <?php } ?>
           </tbody>
@@ -66,9 +64,9 @@
       <!-- Modal Elimina -->
 
       <script>
-        function EliminaDepartamentos(id) {
+        function EliminaCargos(id) {
           $("#id").val(id);
-          dataURL = "<?php echo base_url('/departamentos/eliminados'); ?>" + "/" + id + "/" + 'A';
+          dataURL = "<?php echo base_url('/cargos/eliminados'); ?>" + "/" + id + "/" + 'A';
           $.ajax({
             type: "POST",
             url: dataURL,

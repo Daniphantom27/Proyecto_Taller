@@ -72,12 +72,12 @@ class Paises extends BaseController
         
     }
 
-    public function eliminar($id,$estado,){
+    public function eliminar($id,$estado){
         $paises_= $this->paises->eliminarPaises($id,$estado);
         return redirect()->to(base_url('/paises'));
     }
 
-    public function eliminarP($id,$estado,){
+    public function eliminarP($id,$estado){
         $paises_= $this->paises->eliminarPaises($id,$estado);
         return redirect()->to(base_url('/paises/eliminados'));
     }
