@@ -13,7 +13,7 @@ class EmpleadosModel extends Model{
     protected $returnType     = 'array';  /* forma en que se retornan los datos */
     protected $useSoftDeletes = false; /* si hay eliminacion fisica de registro */
 
-    protected $allowedFields = ['nombre','apellidos','estado','fecha_crea','id_municipio','id_cargo','nacimiento']; /* relacion de campos de la tabla */
+    protected $allowedFields = ['nombre','apellidos','estado','fecha_crea','id_pais','id_municipio','id_departamento','id_cargo','nacimiento']; /* relacion de campos de la tabla */
 
     protected $useTimestamps = true; /*tipo de tiempo a utilizar */
     protected $createdField  = 'fecha_crea'; /*fecha automatica para la creacion */
@@ -22,15 +22,17 @@ class EmpleadosModel extends Model{
 
     protected $validationRules    = [];
     protected $validationMessages = [];
-    protected $skipValidation    = false;
+    protected $skipValidation    = false;   
 
 
     public function obtenerEmpleados(){
 
      //Cargos
-        $this->select('empleados.*,cargos.nombre as nombre_cargo, municipios.nombre as nombre_municipio');
+        $this->select('empleados.*,cargos.nombre as nombre_cargo, municipios.nombre as nombre_municipio, paises.nombre as nombre_pais, departamentos.nombre as nombre_departamento');
         $this->join('cargos','cargos.id = empleados.id_cargo');
         $this->join('municipios','municipios.id = empleados.id_municipio');
+        $this->join('paises','paises.id = empleados.id_pais');  
+        $this->join('departamentos','departamentos.id = empleados.id_departamento'); 
         $this->where('empleados.estado', 'A');
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
         return $datos; 

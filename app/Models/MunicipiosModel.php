@@ -38,7 +38,7 @@ class MunicipiosModel extends Model
 
     /* public function update($nombre, $id){
         $this->update('cargos');
-        $this->set('nombre', $nombre);
+        $this->set('nombre',     $nombre);
         $this->where('id_cargo', $id);
     } */
     /*   public function buscaCargo($id){
@@ -72,4 +72,5 @@ class MunicipiosModel extends Model
         $datos = $this->findAll();
         return $datos;
     }
+
 }

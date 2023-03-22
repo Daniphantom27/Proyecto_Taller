@@ -40,7 +40,7 @@
                 <td><?php echo $dato['nombre_pais']; ?></td>
                 <td><?php echo $dato['nombre']; ?></td>
                 <td><?php echo $dato['estado']; ?></td>
-                <td title="Activar Registro" data-bs-toggle="modal" data-bs-target="#modal-confirma" href="#" data-href="<?php echo base_url('/municipios/eliminar') . '/' . $dato['id'] . '/' . 'A'; ?>"><i class="bi bi-arrow-clockwise"></i></td>
+                <td title="Activar Registro" data-bs-toggle="modal" data-bs-target="#modal-confirma" href="#" data-href="<?php echo base_url('/municipios/eliminarM') . '/' . $dato['id'] . '/' . 'A'; ?>"><i class="bi bi-arrow-clockwise"></i></td>
               </tr> 
             <?php } ?>
           </tbody>

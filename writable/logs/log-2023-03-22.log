@@ -1,0 +1,815 @@
+ERROR - 2023-03-22 00:20:59 --> mysqli_sql_exception: Unknown column 'municipios.id_pais' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `municip...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `municip...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `municip...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `municip...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\MunicipiosModel.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Municipios.php(24): App\Models\MunicipiosModel->obtenerMunicipios()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Municipios->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 00:20:59 --> Unknown column 'municipios.id_pais' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `municipios`.*, `departamentos`.`nombre` as `nombre_departamento`, `paises`.`nombre` as `nombre_pais`
+FROM `municipios`
+JOIN `paises` ON `paises`.`id` = `municipios`.`id_pais`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_departamento`
+WHERE `municipios`.`estado` = :municipios.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MunicipiosModel.php(34): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Municipios.php(24): App\Models\MunicipiosModel->obtenerMunicipios()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 00:21:38 --> mysqli_sql_exception: Unknown column 'municipios.id_pais' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `municip...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `municip...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `municip...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `municip...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\MunicipiosModel.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Municipios.php(24): App\Models\MunicipiosModel->obtenerMunicipios()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Municipios->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 00:21:38 --> Unknown column 'municipios.id_pais' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `municipios`.*, `departamentos`.`nombre` as `nombre_departamento`, `paises`.`nombre` as `nombre_pais`
+FROM `municipios`
+JOIN `paises` ON `paises`.`id` = `municipios`.`id_pais`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_departamento`
+WHERE `municipios`.`estado` = :municipios.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\MunicipiosModel.php(34): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Municipios.php(24): App\Models\MunicipiosModel->obtenerMunicipios()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:36:06 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:36:06 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:38:08 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:38:08 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:39:53 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:39:53 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:39:55 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:39:55 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:39:56 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:39:56 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:40:00 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:40:00 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:40:02 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:40:02 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:40:26 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:40:26 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:41:24 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:41:24 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:41:26 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:41:26 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:41:26 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:41:26 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:43:28 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:43:28 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:44:22 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:44:22 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:44:24 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:44:24 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:44:25 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:44:25 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:44:25 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:44:25 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 03:44:26 --> mysqli_sql_exception: Unknown column 'empleados.id_paises' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 03:44:26 --> Unknown column 'empleados.id_paises' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_paises`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(36): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(28): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 04:06:55 --> mysqli_sql_exception: Unknown column 'empleados.id_departamentos' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(37): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(32): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 04:06:55 --> Unknown column 'empleados.id_departamentos' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`, `departamentos`.`nombre` as `nombre_departamento`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_pais`
+JOIN `departamentos` ON `departamentos`.`id` = `empleados`.`id_departamentos`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(37): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(32): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-22 04:07:14 --> mysqli_sql_exception: Unknown column 'empleados.id_departamentos' in 'on clause' in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_dan\app\Models\EmpleadosModel.php(37): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(32): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-22 04:07:14 --> Unknown column 'empleados.id_departamentos' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `cargos`.`nombre` as `nombre_cargo`, `municipios`.`nombre` as `nombre_municipio`, `paises`.`nombre` as `nombre_pais`, `departamentos`.`nombre` as `nombre_departamento`
+FROM `empleados`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `paises` ON `paises`.`id` = `empleados`.`id_pais`
+JOIN `departamentos` ON `departamentos`.`id` = `empleados`.`id_departamentos`
+WHERE `empleados`.`estado` = :empleados.estado:', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(37): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(32): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:08:36 --> syntax error, unexpected identifier "ld", expecting "," or ";"
+in APPPATH\Models\EmpleadosModel.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_dan\\app\\Models\\EmpleadosModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\EmpleadosModel')
+ 3 APPPATH\Controllers\Empleados.php(22): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\EmpleadosModel')
+ 4 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Empleados->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:08:38 --> syntax error, unexpected identifier "ld", expecting "," or ";"
+in APPPATH\Models\EmpleadosModel.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_dan\\app\\Models\\EmpleadosModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\EmpleadosModel')
+ 3 APPPATH\Controllers\Empleados.php(22): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\EmpleadosModel')
+ 4 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Empleados->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:08:38 --> syntax error, unexpected identifier "ld", expecting "," or ";"
+in APPPATH\Models\EmpleadosModel.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_dan\\app\\Models\\EmpleadosModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\EmpleadosModel')
+ 3 APPPATH\Controllers\Empleados.php(22): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\EmpleadosModel')
+ 4 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Empleados->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:09:31 --> syntax error, unexpected identifier "ld", expecting "," or ";"
+in APPPATH\Models\EmpleadosModel.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_dan\\app\\Models\\EmpleadosModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\EmpleadosModel')
+ 3 APPPATH\Controllers\Empleados.php(22): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\EmpleadosModel')
+ 4 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Empleados->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:09:48 --> syntax error, unexpected identifier "ld", expecting "," or ";"
+in APPPATH\Models\EmpleadosModel.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_dan\\app\\Models\\EmpleadosModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\EmpleadosModel')
+ 3 APPPATH\Controllers\Empleados.php(22): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\EmpleadosModel')
+ 4 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Empleados->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:09:59 --> syntax error, unexpected identifier "ld", expecting "," or ";"
+in APPPATH\Models\EmpleadosModel.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_dan\\app\\Models\\EmpleadosModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\EmpleadosModel')
+ 3 APPPATH\Controllers\Empleados.php(22): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\EmpleadosModel')
+ 4 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Empleados->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:34:43 --> Undefined array key "salario"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "salario"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:34:44 --> Undefined array key "salario"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "salario"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:35:06 --> Undefined array key "sueldo"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sueldo"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:35:12 --> Undefined array key "sueldo"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sueldo"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:35:20 --> Undefined array key "sueldo"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sueldo"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:35:23 --> Undefined array key "sueldo"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sueldo"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:35:23 --> Undefined array key "sueldo"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sueldo"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:35:24 --> Undefined array key "sueldo"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sueldo"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:35:24 --> Undefined array key "sueldo"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sueldo"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-22 04:36:00 --> Undefined array key "sueldo"
+in APPPATH\Views\empleados\empleados.php on line 39.
+ 1 APPPATH\Views\empleados\empleados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sueldo"', 'C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyecto_dan\\app\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(37): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

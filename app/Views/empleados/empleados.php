@@ -7,7 +7,7 @@
   <h1 class="titulo"><?php echo "Administrar Empleados"; ?></h1>
 
   <div>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
+    <a type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo 1 . ',' . 1 ?>);">Agregar</a>
     <button type="button" class="btn btn-secondary">Eliminados</button>
     <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
   </div>
@@ -20,6 +20,8 @@
           <th>Apellidos</th>
           <th>Nacimiento</th>
           <th>Cargo</th>
+          <th>Pais</th>
+          <th>Departamentos</th>
           <th>Municipio</th>
           <th>Estado</th>
           <th colspan="2">Acciones</th>
@@ -33,10 +35,12 @@
             <td><?php echo $dato['apellidos']; ?></td>
             <td><?php echo $dato['nacimiento']; ?></td>
             <td><?php echo $dato['nombre_cargo']; ?></td>
+            <td><?php echo $dato['nombre_pais']; ?></td>
+            <td><?php echo $dato['nombre_departamento']; ?></td>
             <td><?php echo $dato['nombre_municipio']; ?></td>
             <td><?php echo $dato['estado']; ?></td>
-            <td><button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo $dato['id'] . ',' . 2 ?>);">
-                <i class="bi bi-person-plus"></i></button>
+            <td><a type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo $dato['id'] . ',' . 2 ?>);">
+                <i class="bi bi-person-plus"></i></a>
               <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
             </td>
           </tr>
@@ -52,7 +56,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="titulo">Agregar Empleado</h5>
+            <h5 class="modal-title" name="titulo" id="titulo">Agregar Empleado</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -63,33 +67,33 @@
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Apellido:</label>
-                <input type="text" name="apellido" id="apellido" class="form-control" id="message-text">
+                <input type="text" name="apellido" id="apellido" class="form-control">
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nacimiento:</label>
-                 <select name="nacimiento" id="nacimiento" class="form-select">
-                 <option selected>Seleccionar Nacimiento</option>
-                  <option value="1">2004</option>
-                  <option value="2">2003</option>
-                  <option value="3">2002</option>
-                  <option value="4">2001</option>
-                  <option value="5">2000</option>
-                  <option value="6">1999</option>
-                  <option value="7">1998</option>
-                  <option value="8">1997</option>
-                  <option value="9">1996</option>
-                  <option value="10">1995</option>
-                  <option value="11">1994</option>
-                  <option value="12">1993</option>
-                  <option value="13">1992</option>
-                  <option value="14">1991</option>
-                  <option value="15">1990</option>
-                  <option value="16">1989</option>
-                  <option value="17">1988</option>
-                  <option value="18">1987</option>
-                  <option value="19">1986</option>
-                  <option value="20">1985</option>
-                </select> 
+                <select name="nacimiento" id="nacimiento" class="form-select">
+                  <option>Seleccionar Nacimiento</option>
+                  <option>2004</option>
+                  <option>2003</option>
+                  <option>2002</option>
+                  <option>2001</option>
+                  <option>2000</option>
+                  <option>1999</option> 
+                  <option>1998</option>
+                  <option>1997</option>
+                  <option>1996</option>
+                  <option>1995</option>
+                  <option>1994</option>
+                  <option>1993</option>
+                  <option>1992</option>
+                  <option>1991</option>
+                  <option>1990</option>
+                  <option>1989</option>
+                  <option>1988</option>
+                  <option>1987</option>
+                  <option>1986</option>
+                  <option>1985</option>
+                </select>
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Cargo:</label>
@@ -102,10 +106,29 @@
                   <?php } ?>
                 </select>
               </div>
+
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Pais:</label>
+                <select name="pais" id="pais" class="form-select">
+                  <option selected>Seleccionar Pais</option>
+                  <?php foreach ($paises as $dato) { ?>
+                    <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Departamento:</label>
+                <select name="departamento" id="departamento" class="form-select">
+                  <option selected>Seleccionar Departamento</option>
+                  <?php foreach ($departamentos as $dato) { ?>
+                    <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Municipio:</label>
-                <input id="tp" name="tp" hidden>
-                <input id="id" name="id" hidden>
                 <select name="municipio" id="municipio" class="form-select">
                   <option selected>Seleccionar Municipio</option>
                   <?php foreach ($municipios as $dato) { ?>
@@ -113,6 +136,7 @@
                   <?php } ?>
                 </select>
               </div>
+
             </form>
           </div>
           <div class="modal-footer">
@@ -137,11 +161,13 @@
             $("#id").val(id);
             $("#municipio").val(rs[0]['id_municipio']);
             $("#cargo").val(rs[0]['id_cargo']);
+            $("#pais").val(rs[0]['id_pais']);
+            $("#departamento").val(rs[0]['id_departamento']);
             $("#nombre").val(rs[0]['nombre']);
             $("#apellido").val(rs[0]['apellidos']);
-            $("#nacimiento").val(rs[1]['nacimiento']);
+            $("#nacimiento").val(rs[0]['nacimiento']);
             $("#btn_Guardar").text('Actualizar');
-            $("#titulo").text('Editar Empleado');
+            $("#titulo").text('Editar Empleado'); 
             $("#AgregarEmpleados").modal("show");
           }
         })
@@ -150,14 +176,16 @@
         $("#id").val(id);
         $("#municipio").val('');
         $("#cargo").val('');
+        $("#pais").val('');
+        $("#departamento").val('');
         $("#nombre").val('');
         $("#apellido").val('');
         $("#nacimiento").val('');
         $("#btn_Guardar").text('Guardar');
         $("#titulo").text('Agregar Empleado');
-            
-    }
-  };
+
+      }
+    };
   </script>
 
 </body>

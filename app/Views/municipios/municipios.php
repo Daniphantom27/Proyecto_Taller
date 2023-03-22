@@ -7,7 +7,7 @@
     <h1 class="titulo"><?php echo "Administrar Municipios"; ?></h1>
 
     <div>
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaMunicipios(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
+        <a type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaMunicipios(<?php echo 1 . ',' . 1 ?>);">Agregar</a>
         <a href="<?php echo base_url('/municipios/eliminados'); ?>" class="btn btn-secondary regresar_Btn">Eliminados</a>
         <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
     </div>
@@ -16,8 +16,8 @@
             <thead>
                 <tr style="color:#342C6E;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
                     <th>Id</th>
-                    <th>Departamento</th>
                     <th>Pais</th>
+                    <th>Departamento</th>
                     <th>Nombre</th>
                     <th>Estado</th>
                     <th colspan="2">Acciones</th>
@@ -27,8 +27,8 @@
                 <?php foreach ($municipios as $dato) { ?>
                     <tr>
                         <td><?php echo $dato['id']; ?></td>
-                        <td><?php echo $dato['nombre_departamento']; ?></td>
                         <td><?php echo $dato['nombre_pais']; ?></td>
+                        <td><?php echo $dato['nombre_departamento']; ?></td>
                         <td><?php echo $dato['nombre']; ?></td>
                         <td><?php echo $dato['estado']; ?></td>
                         <td><button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#añadirModal" onclick="seleccionaMunicipios(<?php echo $dato['id'] . ',' . 2 ?>);">
@@ -54,24 +54,22 @@
                     <div class="modal-body">
                         <form>
 
-                        <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Pais:</label>
-                                <input id="tp" name="tp" hidden >
                                 <input id="id" name="id" hidden>
+                                <input id="tp" name="tp" hidden>
                                 <select name="pais" id="pais" class="form-select">
-                                    <option selected>Seleccionar Pais</option>
+                                    <option>Seleccionar Pais</option>
                                     <?php foreach ($paises as $dato) { ?>
                                         <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Departamento:</label>
-                                <input id="tp" name="tp" hidden>
-                                <input id="id" name="id" hidden>
                                 <select name="departamento" id="departamento" class="form-select">
-                                    <option >Seleccionar Departamento</option>
+                                    <option id="sde">Seleccionar Departamento</option>
                                     <?php foreach ($departamentos as $dato) { ?>
                                         <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                                     <?php } ?>
@@ -101,7 +99,7 @@
 
                 </div>
                 <div style="text-align:center;font-weight:bold;" class="modal-body">
-                    <p>Seguro Desea Eliminar éste Registro?</p>
+                    <p>Seguro Desea Eliminar éste Registro?x</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary close" data-bs-dismiss="modal">No</button>
@@ -131,7 +129,7 @@
                     }
                 })
             } else {
-                $("#tp").val(1);    
+                $("#tp").val(1);
                 $("#departamento").val('');
                 $("#pais").val('');
                 $("#id").val('');
@@ -147,5 +145,28 @@
             $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
         })
     </script>
+
+    <!-- <script type="text/javascript">
+       $(document).ready(function(){
+        recargarLista();
+
+        $('#pais').change(function(){
+            recargarLista();
+        })
+       })
+    </script>
+
+    <script type="text/javascript">
+        function recargarLista(){
+            $.ajax({
+                type: 'POST',
+                url: 'municipios',
+                data:"paises="+ $('#pais').val(),
+                success:function(r){
+                    $('#departamento').html(r);
+                }
+            })
+        }
+    </script> -->
 
 </body>

@@ -91,7 +91,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary close" data-bs-dismiss="modal">No</button>
-                    <a class="btn btn-danger btn-ok">Si</a>
+                    <a class="btn btn-danger btn-ok">Si</a>x
                 </div>
             </div>
         </div>

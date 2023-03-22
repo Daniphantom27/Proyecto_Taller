@@ -57,15 +57,15 @@ class Municipios extends BaseController
         if ($this->request->getMethod() == "post") {
             if ($tp == 1) {
                 $this->municipios->save([
+                    'id_pais' => $this->request->getPost('pais'),
                     'id_departamento' => $this->request->getPost('departamento'),
                     'nombre' => $this->request->getPost('nombre'),
-                    'id_pais' => $this->request->getPost('pais')
                 ]);
             } else {
                 $this->municipios->update($this->request->getPost('id'), [
+                    'id_pais' => $this->request->getPost('pais'),
                     'id_departamento' => $this->request->getPost('departamento'),
                     'nombre' => $this->request->getPost('nombre'),
-                    'id_pais' => $this->request->getPost('pais')
                 ]);
             }
             return redirect()->to(base_url('/municipios'));
@@ -76,7 +76,6 @@ class Municipios extends BaseController
     {
         $municipios = $this->municipios->eliminados_municipios();
         $data = ['titulo' => 'MUNICIPIOS ELIMINADOS', 'titulo' => 'Proyecto Taller', 'nombre' => 'Daniel Sanchez', 'municipios' => $municipios];
-
         echo view('/principal/header', $data);
         echo view('/municipios/eliminados', $data);
     }
@@ -91,4 +90,7 @@ class Municipios extends BaseController
         $this->municipios->eliminarMunicipios($id,$estado);
          return redirect()->to(base_url('/municipios/eliminados'));
      }
+     
+     
+
 }
