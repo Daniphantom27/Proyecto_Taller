@@ -23,12 +23,14 @@
           <th>Pais</th>
           <th>Departamentos</th>
           <th>Municipio</th>
+           <th>Salarios</th> 
           <th>Estado</th>
           <th colspan="2">Acciones</th>
         </tr>
       </thead>
       <tbody style="font-family:Arial;font-size:12px;">
         <?php foreach ($empleados as $dato) { ?>
+          <input id="id_salario" name="id_salario" value="<?php echo $dato['id_salario']; ?>" hidden> </>
           <tr>
             <td><?php echo $dato['id']; ?></td>
             <td><?php echo $dato['nombre']; ?></td>
@@ -38,7 +40,8 @@
             <td><?php echo $dato['nombre_pais']; ?></td>
             <td><?php echo $dato['nombre_departamento']; ?></td>
             <td><?php echo $dato['nombre_municipio']; ?></td>
-            <td><?php echo $dato['estado']; ?></td>
+            <td><?php echo $dato['salario']; ?></td>
+            <td><?php echo $dato['estado']; ?></td> 
             <td><a type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo $dato['id'] . ',' . 2 ?>);">
                 <i class="bi bi-person-plus"></i></a>
               <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
@@ -63,6 +66,9 @@
             <form>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Nombre:</label>
+                <input id="tp" name="tp" hidden>
+                <input id="id" name="id" hidden>
+                <input id="salario" name="salario" hidden>
                 <input type="text" name="nombre" class="form-control" id="nombre">
               </div>
               <div class="mb-3">
@@ -71,34 +77,16 @@
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nacimiento:</label>
-                <select name="nacimiento" id="nacimiento" class="form-select">
-                  <option>Seleccionar Nacimiento</option>
-                  <option>2004</option>
-                  <option>2003</option>
-                  <option>2002</option>
-                  <option>2001</option>
-                  <option>2000</option>
-                  <option>1999</option> 
-                  <option>1998</option>
-                  <option>1997</option>
-                  <option>1996</option>
-                  <option>1995</option>
-                  <option>1994</option>
-                  <option>1993</option>
-                  <option>1992</option>
-                  <option>1991</option>
-                  <option>1990</option>
-                  <option>1989</option>
-                  <option>1988</option>
-                  <option>1987</option>
-                  <option>1986</option>
-                  <option>1985</option>
-                </select>
+                <select class="form-select" name="nacimiento" id="nacimiento">
+                                <option selected value="">-- Seleccionar Año --</option>
+                                <?php $years = range(2004, 1940); ?>
+                                <?php foreach ($years as $year) : ?>
+                                    <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                                <?php endforeach; ?>
+                            </select>
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Cargo:</label>
-                <input id="tp" name="tp" hidden>
-                <input id="id" name="id" hidden>
                 <select name="cargo" id="cargo" class="form-select">
                   <option selected>Seleccionar Cargo</option>
                   <?php foreach ($cargos as $dato) { ?>
@@ -137,6 +125,11 @@
                 </select>
               </div>
 
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Salario:</label>
+                <input type="text" name="salari" id="salari" class="form-control">
+              </div>
+
             </form>
           </div>
           <div class="modal-footer">
@@ -159,13 +152,14 @@
           success: function(rs) {
             $("#tp").val(2);
             $("#id").val(id);
+            $("#salari").val(rs[0]['salario']);
             $("#municipio").val(rs[0]['id_municipio']);
             $("#cargo").val(rs[0]['id_cargo']);
             $("#pais").val(rs[0]['id_pais']);
             $("#departamento").val(rs[0]['id_departamento']);
             $("#nombre").val(rs[0]['nombre']);
             $("#apellido").val(rs[0]['apellidos']);
-            $("#nacimiento").val(rs[0]['nacimiento']);
+            $("#nacimiento").val(rs[0]['nacimiento']);  
             $("#btn_Guardar").text('Actualizar');
             $("#titulo").text('Editar Empleado'); 
             $("#AgregarEmpleados").modal("show");
@@ -179,7 +173,8 @@
         $("#pais").val('');
         $("#departamento").val('');
         $("#nombre").val('');
-        $("#apellido").val('');
+        $("#apellido").val(''); 
+        $("#salari").val('');
         $("#nacimiento").val('');
         $("#btn_Guardar").text('Guardar');
         $("#titulo").text('Agregar Empleado');

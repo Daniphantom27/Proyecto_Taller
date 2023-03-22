@@ -6,8 +6,9 @@ use App\Controllers\BaseController; /*la plantilla del controlador general de co
 use App\Models\EmpleadosModel;
 use App\Models\CargosModel;
 use App\Models\MunicipiosModel;
-use App\Models\PaisesModel;
+use App\Models\PaisesModel; 
 use App\Models\DepartamentosModel;
+use App\Models\SalariosModel;
 
 class Empleados extends BaseController    
 {    
@@ -16,6 +17,8 @@ class Empleados extends BaseController
     protected $municipios;
     protected $paises;
     protected $departamentos;
+    protected $salarios;
+
 
     public function __construct()
     {
@@ -24,6 +27,7 @@ class Empleados extends BaseController
         $this -> municipios = new MunicipiosModel();
         $this -> paises = new PaisesModel();
         $this -> departamentos = new DepartamentosModel();
+        $this -> salarios = new SalariosModel();
     }
         public function index() 
         {   
@@ -77,6 +81,16 @@ class Empleados extends BaseController
                         'id_pais' => $this->request->getPost('pais'),
                         'id_departamento' => $this->request->getPost('departamento'),
                     ]);  
+
+                    $sueldo = $this->request->getPost('sueldo');
+                    $periodo = $this->request->getPost('periodo');
+                    $id_empleado = $this->empleados->getInsertID();
+
+                    echo $id_empleado;
+
+                    $this->salarios->guardar($sueldo, $periodo, $id_empleado);
+    
+                    return redirect()->to(base_url('/empleados'));
                 }else {
                     $this->empleados->update($this->request->getPost('id'),[                    
                         'id_municipio' => $this->request->getPost('municipio'),
@@ -87,8 +101,17 @@ class Empleados extends BaseController
                         'id_pais' => $this->request->getPost('pais'),
                         'id_departamento' => $this->request->getPost('departamento'),
                     ]);
+
+                    $sueldo = $this->request->getPost('sueldo');
+                    $periodo = $this->request->getPost('periodo');
+                    $salario = $this->request->getPost('salari');
+
+                    $this->salarios->actualizar($sueldo, $periodo, $salario);
+                    return redirect()->to(base_url('/empleados'));
+                   
+
                 }
-                return redirect()->to(base_url('/empleados'));
+                
             }
         }
      

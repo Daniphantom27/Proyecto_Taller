@@ -90,6 +90,16 @@ class Municipios extends BaseController
         $this->municipios->eliminarMunicipios($id,$estado);
          return redirect()->to(base_url('/municipios/eliminados'));
      }
+
+     public function buscar_dptoPais($id)
+    {
+        $returnData = array();
+        $departamentos = $this->departamentos->traer_dptoPais($id);
+        if (!empty($departamentos)) {
+            array_push($returnData, $departamentos);
+        }
+        echo json_encode($departamentos);
+    }
      
      
 

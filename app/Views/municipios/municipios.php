@@ -146,27 +146,24 @@
         })
     </script>
 
-    <!-- <script type="text/javascript">
-       $(document).ready(function(){
-        recargarLista();
-
-        $('#pais').change(function(){
-            recargarLista();
-        })
-       })
-    </script>
-
-    <script type="text/javascript">
-        function recargarLista(){
+    <script>
+        $('#pais').on('change', () => {
+            pais = $('#pais').val()
             $.ajax({
+                url: "<?php echo base_url('/municipios/buscar_dptoPais'); ?>" + "/" + pais,
                 type: 'POST',
-                url: 'municipios',
-                data:"paises="+ $('#pais').val(),
-                success:function(r){
-                    $('#departamento').html(r);
+                dataType: 'json',
+                success: function(res) {
+                    var obtener
+                    obtener = `<option selected>Seleccionar Departamento</option>`
+                    for (let i = 0; i < res.length; i++) {
+                        obtener += `<option value='${res[i].id}'>${res[i].nombre}</option>`
+                    }
+                    obtener += `</select>`
+                    $('#departamento').html(obtener)
                 }
             })
-        }
-    </script> -->
+        })
+    </script>
 
 </body>
