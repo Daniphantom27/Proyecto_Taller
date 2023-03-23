@@ -30,7 +30,6 @@
       </thead>
       <tbody style="font-family:Arial;font-size:12px;">
         <?php foreach ($empleados as $dato) { ?>
-          <input id="id_salario" name="id_salario" value="<?php echo $dato['id_salario']; ?>" hidden> </>
           <tr>
             <td><?php echo $dato['id']; ?></td>
             <td><?php echo $dato['nombre']; ?></td>
@@ -55,7 +54,7 @@
   <!-- Modal -->
   <form method="POST" action="<?php echo base_url('/empleados/insertarEmpleados'); ?> " autocomplete="off">
 
-    <div class="modal fade" id="AgregarEmpleados" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" data-bs-backdrop="static" id="AgregarEmpleados" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -84,6 +83,7 @@
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Cargo:</label>
+                <input id="id_sala" name="id_sala" hidden>
                 <input id="tp" name="tp" hidden>
                 <input id="id" name="id" hidden>
                 <select name="cargo" id="cargo" class="form-select">
@@ -177,8 +177,10 @@
             $("#tp").val(2);
             $("#id").val(id);
             $("#salari").val(rs[0]['salario']);
+            $("#id_sala").val(rs[0]['id_salario']);
             $("#periodo").val(rs[0]['periodo']);
             $("#municipio").val(rs[0]['id_municipio']);
+            obtenerDepartamento(rs[0]['id_pais'], rs[0]['id_departamento'], rs[0]['id_municipio']);
             $("#cargo").val(rs[0]['id_cargo']);
             $("#pais").val(rs[0]['id_pais']);
             $("#departamento").val(rs[0]['id_departamento']);
@@ -218,40 +220,54 @@
 <script>
         $('#pais').on('change', () => {
             pais = $('#pais').val()
+            obtenerDepartamento(pais)
+          })
+
+
+           function obtenerDepartamento(pais,id_departamento,id_municipio){
             $.ajax({
                 url: "<?php echo base_url('/empleados/buscar_dptoPais'); ?>" + "/" + pais,
                 type: 'POST',
                 dataType: 'json',
                 success: function(res) {
                     var obtener
-                    obtener = `<option selected>Seleccionar Departamento</option>`
+                    obtener = `<select name="departamento" id="departamento" class="form-select">
+                               <option selected>Seleccionar Departamento</option>`
                     for (let i = 0; i < res.length; i++) {
                         obtener += `<option value='${res[i].id}'>${res[i].nombre}</option>`
                     }
                     obtener += `</select>`
+            
                     $('#departamento').html(obtener)
+                    $('#departamento').val(id_departamento)
+                    obtenerMunicipios(id_departamento,id_municipio)
                 }
             })
-        })
+          }
     </script>
     <script>
+      function obtenerMunicipios(id_departamento, id_municipio){
         $('#departamento').on('change', () => {
           departamento = $('#departamento').val()
+          obtenerMunicipios(departamento)
+        })
             $.ajax({
-                url: "<?php echo base_url('/empleados/buscar_munDpto'); ?>" + "/" + departamento,
+                url: "<?php echo base_url('/empleados/buscar_munDpto'); ?>" + "/" + id_departamento,
                 type: 'POST',
                 dataType: 'json',
                 success: function(res) {
                     var obtener
-                    obtener = `<option selected>Seleccionar Municipio</option>`
+                    obtener = `<select name="municipio" id="municipio" class="form-select">
+                               <option selected>Seleccionar Municipio</option>`
                     for (let i = 0; i < res.length; i++) {
                         obtener += `<option value='${res[i].id}'>${res[i].nombre}</option>`
                     }
                     obtener += `</select>`
                     $('#municipio').html(obtener)
+                    $('#municipio').val(id_municipio)
                 }
-            })
-        })
+            })                
+      }
     </script>
 
 </body>

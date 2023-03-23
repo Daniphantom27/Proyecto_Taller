@@ -91,7 +91,7 @@ class Empleados extends BaseController
                     $this->salarios->guardar($sueldo, $periodo, $id_empleado);
     
                     return redirect()->to(base_url('/empleados'));
-                }else {
+                }else { 
                     $this->empleados->update($this->request->getPost('id'),[                    
                         'id_municipio' => $this->request->getPost('municipio'),
                         'nombre' => $this->request->getPost('nombre'),
@@ -104,9 +104,10 @@ class Empleados extends BaseController
 
                     $sueldo = $this->request->getPost('salari');
                     $periodo = $this->request->getPost('periodo');
-                    $salario = $this->request->getPost('salari');
+                    $salario = $this->request->getPost('id_sala');
 
                     $this->salarios->actualizar($sueldo, $periodo, $salario);
+                    
                     return redirect()->to(base_url('/empleados'));
                    
 

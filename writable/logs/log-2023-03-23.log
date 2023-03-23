@@ -1,0 +1,58 @@
+CRITICAL - 2023-03-23 12:49:13 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Models\SalariosModel.php(39): CodeIgniter\Model->update(null, [...])
+ 4 APPPATH\Controllers\Empleados.php(109): App\Models\SalariosModel->actualizar(null, '2023', '900000.00')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->insertarEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-23 12:49:24 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Models\SalariosModel.php(39): CodeIgniter\Model->update(null, [...])
+ 4 APPPATH\Controllers\Empleados.php(109): App\Models\SalariosModel->actualizar(null, '2023', '300000.00')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->insertarEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-23 13:08:23 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_taller`.`empleados`, CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`id_municipio`) REFERENCES `municipios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_dan\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `emplead...')
+#2 C:\xampp\htdocs\proyecto_dan\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `emplead...')
+#3 C:\xampp\htdocs\proyecto_dan\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto_dan\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\proyecto_dan\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\proyecto_dan\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\proyecto_dan\app\Controllers\Empleados.php(94): CodeIgniter\Model->update('1', Array)
+#8 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(934): App\Controllers\Empleados->insertarEmpleados()
+#9 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_dan\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-23 13:08:23 --> Cannot add or update a child row: a foreign key constraint fails (`bd_taller`.`empleados`, CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`id_municipio`) REFERENCES `municipios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `empleados` SET `nombre` = :nombre:, `apellidos` = :apellidos:, `id_municipio` = :id_municipio:, `nacimiento` = :nacimiento:, `id_cargo` = :id_cargo:
+WHERE `empleados`.`id` IN :empleados.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Empleados.php(94): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->insertarEmpleados()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-23 13:33:12 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1680.
+ 1 SYSTEMPATH\BaseModel.php(1680): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Models\SalariosModel.php(46): CodeIgniter\Model->update([...])
+ 5 APPPATH\Controllers\Empleados.php(108): App\Models\SalariosModel->actualizar('13456.00', '2023')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->insertarEmpleados()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

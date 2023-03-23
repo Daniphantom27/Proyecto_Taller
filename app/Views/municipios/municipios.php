@@ -44,7 +44,7 @@
     <!-- Modal -->
     <form method="POST" action="<?php echo base_url('/municipios/insertarMunicipios'); ?> " autocomplete="off">
 
-        <div class="modal fade" id="añadirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="añadirModal"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -69,7 +69,7 @@
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Departamento:</label>
                                 <select name="departamento" id="departamento" class="form-select">
-                                    <option id="sde">Seleccionar Departamento</option>
+                                    <option id="selected">Seleccionar Departamento</option>
                                     <?php foreach ($departamentos as $dato) { ?>
                                         <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                                     <?php } ?>

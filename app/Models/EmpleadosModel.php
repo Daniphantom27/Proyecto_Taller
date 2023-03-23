@@ -39,19 +39,6 @@ class EmpleadosModel extends Model{
 
     }
 
-    
-    /* public function update($nombre, $id){
-        $this->update('cargos');
-        $this->set('nombre', $nombre);
-        $this->where('id_cargo', $id);
-    } */
-   /*  public function buscaCargo($id){
-        $this->select('clientes.*');
-        $this->where('id_cliente', $id);
-        $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
-        return $datos;
-    } */
-
     public function traer_Empleados($id){
         $this->select('empleados.*,cargos.nombre as nombre_cargo, municipios.nombre as nombre_municipio, paises.nombre as nombre_pais, departamentos.nombre as nombre_departamento, salarios.sueldo as salario, salarios.id as id_salario, salarios.periodo as periodo');
         $this->join('municipios','municipios.id = empleados.id_municipio');
@@ -79,6 +66,7 @@ class EmpleadosModel extends Model{
         $this->join('salarios', 'salarios.id_empleado = empleados.id', 'left');
         $this->join('cargos','cargos.id = empleados.id_cargo');
         $this->where('empleados.estado', "E");
+        $this->orderBy('empleados.id');
         $datos = $this->findAll();
         return $datos;
     }

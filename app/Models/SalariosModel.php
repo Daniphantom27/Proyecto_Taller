@@ -24,17 +24,24 @@ class SalariosModel extends Model{
     protected $validationMessages = [];
     protected $skipValidation    = false;
 
+     public function traer_Salarios($id){
+        $this->select('salarios.*');
+        $this->where ('id',$id);
+        $datos= $this->first();
+        return $datos;
+    } 
+
     public function guardar($sueldo, $periodo, $id_empleado)
     {
         $this->save([
-            'sueldo' => $sueldo,
+            'id_empleado' => $id_empleado,
             'periodo' => $periodo,
-            'id_empleado' => $id_empleado
+            'sueldo' => $sueldo
 
         ]);
     }
 
-    public function actualizar($salario,$sueldo, $periodo)
+    public function actualizar($sueldo, $periodo,$salario)
     {
         $this->update(
             $salario,
