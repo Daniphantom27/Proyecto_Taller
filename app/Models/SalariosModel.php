@@ -13,7 +13,7 @@ class SalariosModel extends Model{
     protected $returnType     = 'array';  /* forma en que se retornan los datos */
     protected $useSoftDeletes = false; /* si hay eliminacion fisica de registro */
 
-    protected $allowedFields = ['nombre','estado','fecha_crea','id_empleado']; /* relacion de campos de la tabla */
+    protected $allowedFields = ['nombre','estado','periodo','fecha_crea','id_empleado', 'sueldo']; /* relacion de campos de la tabla */
 
     protected $useTimestamps = true; /*tipo de tiempo a utilizar */
     protected $createdField  = 'fecha_crea'; /*fecha automatica para la creacion */
@@ -27,17 +27,17 @@ class SalariosModel extends Model{
     public function guardar($sueldo, $periodo, $id_empleado)
     {
         $this->save([
-            'id_empleado' => $id_empleado,
             'sueldo' => $sueldo,
-            'periodo' => $periodo
+            'periodo' => $periodo,
+            'id_empleado' => $id_empleado
 
         ]);
     }
 
-    public function actualizar($sueldo, $periodo, $sal)
+    public function actualizar($salario,$sueldo, $periodo)
     {
         $this->update(
-            $sal,
+            $salario,
             [
                 'sueldo' => $sueldo,
                 'periodo' => $periodo

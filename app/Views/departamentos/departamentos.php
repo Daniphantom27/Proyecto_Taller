@@ -32,6 +32,7 @@
                         <td><?php echo $dato['estado']; ?></td>
                         <td><button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#añadirModal" onclick="seleccionaDepartamentos(<?php echo $dato['id'] . ',' . 2 ?>);">
                                 <i class="bi bi-person-plus"></i></button>
+                                
                             <button type="button" href="#" data-href="<?php echo base_url('/departamentos/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
                         </td>
                     </tr>

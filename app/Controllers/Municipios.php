@@ -101,6 +101,5 @@ class Municipios extends BaseController
         echo json_encode($departamentos);
     }
      
-     
 
 }

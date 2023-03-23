@@ -82,7 +82,7 @@ class Empleados extends BaseController
                         'id_departamento' => $this->request->getPost('departamento'),
                     ]);  
 
-                    $sueldo = $this->request->getPost('sueldo');
+                    $sueldo = $this->request->getPost('salari');
                     $periodo = $this->request->getPost('periodo');
                     $id_empleado = $this->empleados->getInsertID();
 
@@ -102,7 +102,7 @@ class Empleados extends BaseController
                         'id_departamento' => $this->request->getPost('departamento'),
                     ]);
 
-                    $sueldo = $this->request->getPost('sueldo');
+                    $sueldo = $this->request->getPost('salari');
                     $periodo = $this->request->getPost('periodo');
                     $salario = $this->request->getPost('salari');
 
@@ -114,7 +114,47 @@ class Empleados extends BaseController
                 
             }
         }
-     
+
+        public function eliminados()
+    {
+        $empleados = $this->empleados->eliminados_empleados();
+        $data = ['titulo' => 'EMPLEADOS ELIMINADOS', 'titulo' => 'Proyecto Taller', 'nombre' => 'Daniel Sanchez', 'empleados' => $empleados];
+
+        echo view('/principal/header', $data);
+        echo view('/empleados/eliminados', $data);
+        
+    }
+
+         public function eliminar($id,$estado){
+         $empleados_= $this->empleados->eliminarEmpleados($id,$estado);
+         return redirect()->to(base_url('/empleados'));
+     }
+
+     public function eliminarE($id, $estado)
+     {
+        $this->empleados->eliminarEmpleados($id,$estado);
+         return redirect()->to(base_url('/empleados/eliminados'));
+     }
+
+     public function buscar_dptoPais($id)
+     {
+         $returnData = array();
+         $departamentos = $this->departamentos->traer_dptoPais($id);
+         if (!empty($departamentos)) {
+             array_push($returnData, $departamentos);
+         }
+         echo json_encode($departamentos);
+     }
+
+     public function buscar_munDpto($id)
+     {
+         $returnData = array();
+         $municipios = $this->municipios->traer_munDpto($id);
+         if (!empty($municipios)) {
+             array_push($returnData, $municipios);
+         }
+         echo json_encode($municipios);
+     }
 
 
-}
+}   
