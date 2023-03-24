@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="<?php echo base_url('css/header.css'); ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="<?php echo base_url(); ?>/js/jquery-3.6.0.js"></script>
+    <script src="<?php echo base_url(); ?>/js/funciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <title><?php echo $titulo; ?></title>
 </head>
@@ -15,7 +17,7 @@
 <div class="titulo">
     <h1>BREWERY</h1> 
     <h4><?php echo $nombre; ?> </h4>
-</div>
+</div>  
 <a href="https://oferta.senasofiaplus.edu.co/sofia-oferta/"><img src="<?php echo base_url('/img/logosena.png'); ?>"></a>
 </header>
 

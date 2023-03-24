@@ -74,7 +74,7 @@
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nacimiento:</label>
                 <select class="form-select" name="nacimiento" id="nacimiento">
-                  <option selected value="">-- Seleccionar Año --</option>
+                  <option selected value="">Seleccionar Año</option>
                   <?php $years = range(2004, 1940); ?>
                   <?php foreach ($years as $year) : ?>
                     <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
@@ -87,7 +87,7 @@
                 <input id="tp" name="tp" hidden>
                 <input id="id" name="id" hidden>
                 <select name="cargo" id="cargo" class="form-select">
-                  <option selected>Seleccionar Cargo</option>
+                  <option selected selected value="">Seleccionar Cargo</option>
                   <?php foreach ($cargos as $dato) { ?>
                     <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                   <?php } ?>
@@ -97,7 +97,7 @@
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Pais:</label>
                 <select name="pais" id="pais" class="form-select">
-                  <option selected>Seleccionar Pais</option>
+                  <option selected selected value="">Seleccionar Pais</option>
                   <?php foreach ($paises as $dato) { ?>
                     <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                   <?php } ?>
@@ -107,7 +107,7 @@
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Departamento:</label>
                 <select name="departamento" id="departamento" class="form-select">
-                  <option selected>Seleccionar Departamento</option>
+                  <option selected selected value="">Seleccionar Departamento</option>
                   <?php foreach ($departamentos as $dato) { ?>
                     <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                   <?php } ?>
@@ -117,7 +117,7 @@
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Municipio:</label>
                 <select name="municipio" id="municipio" class="form-select">
-                  <option selected>Seleccionar Municipio</option>
+                  <option selected selected value="">Seleccionar Municipio</option>
                   <?php foreach ($municipios as $dato) { ?>
                     <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                   <?php } ?>
@@ -223,7 +223,6 @@
             obtenerDepartamento(pais)
           })
 
-
            function obtenerDepartamento(pais,id_departamento,id_municipio){
             $.ajax({
                 url: "<?php echo base_url('/empleados/buscar_dptoPais'); ?>" + "/" + pais,
@@ -232,7 +231,7 @@
                 success: function(res) {
                     var obtener
                     obtener = `<select name="departamento" id="departamento" class="form-select">
-                               <option selected>Seleccionar Departamento</option>`
+                               <option selected value="">Seleccionar Departamento</option>`
                     for (let i = 0; i < res.length; i++) {
                         obtener += `<option value='${res[i].id}'>${res[i].nombre}</option>`
                     }
@@ -246,11 +245,11 @@
           }
     </script>
     <script>
+      $('#departamento').on('change', () => {
+        departamento = $('#departamento').val()
+        obtenerMunicipios(departamento)
+      })
       function obtenerMunicipios(id_departamento, id_municipio){
-        $('#departamento').on('change', () => {
-          departamento = $('#departamento').val()
-          obtenerMunicipios(departamento)
-        })
             $.ajax({
                 url: "<?php echo base_url('/empleados/buscar_munDpto'); ?>" + "/" + id_departamento,
                 type: 'POST',
@@ -258,7 +257,7 @@
                 success: function(res) {
                     var obtener
                     obtener = `<select name="municipio" id="municipio" class="form-select">
-                               <option selected>Seleccionar Municipio</option>`
+                               <option selected value="">Seleccionar Municipio</option>`
                     for (let i = 0; i < res.length; i++) {
                         obtener += `<option value='${res[i].id}'>${res[i].nombre}</option>`
                     }

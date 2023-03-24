@@ -40,12 +40,12 @@
     </table>
   </div>
   <!-- Modal -->
-  <form method="POST" action="<?php echo base_url('/paises/insertarPaises'); ?>" autocomplete="off">
+  <form id="formulario"  method="POST" action="<?php echo base_url('/paises/insertarPaises'); ?>" autocomplete="off">
 
     <div class="modal fade" id="añadirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header">  
             <h5 class="modal-title" id="titulo">Agregar País</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
@@ -125,8 +125,21 @@
     $('#modal-confirma').on('show.bs.modal', function(e){
       $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     })
-
   </script>
+<script>
+  const formulario = document.getElementById('formulario');
+
+  // formulario.addEventListener('submit', function(e) {
+  //   if(codigo == "" && nombre == ""){
+  //     Alert(e)
+  //   }else{
+  //     Alert2(e)
+  //   }
+
+  // })
+
+</script>
+
 
 
 </body>

@@ -59,7 +59,7 @@
                                 <input id="id" name="id" hidden>
                                 <input id="tp" name="tp" hidden>
                                 <select name="pais" id="pais" class="form-select">
-                                    <option>Seleccionar Pais</option>
+                                    <option selected value="">Seleccionar Pais</option>
                                     <?php foreach ($paises as $dato) { ?>
                                         <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                                     <?php } ?>
@@ -69,7 +69,7 @@
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Departamento:</label>
                                 <select name="departamento" id="departamento" class="form-select">
-                                    <option id="selected">Seleccionar Departamento</option>
+                                    <option selected value="">Seleccionar Departamento</option>
                                     <?php foreach ($departamentos as $dato) { ?>
                                         <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                                     <?php } ?>
@@ -122,6 +122,7 @@
                         $("#id").val(id);
                         $("#departamento").val(rs[0]['id_departamento']);
                         $("#pais").val(rs[0]['id_pais']);
+                        obtenerDepartamento(rs[0]['id_pais'], rs[0]['id_departamento']);
                         $("#nombre").val(rs[0]['nombre']);
                         $("#btn_Guardar").text('Actualizar');
                         $("#titulo").text('Editar Municipio');
@@ -146,24 +147,32 @@
         })
     </script>
 
-    <script>
+<script>
         $('#pais').on('change', () => {
             pais = $('#pais').val()
+            obtenerDepartamento(pais)
+          })
+
+           function obtenerDepartamento(pais,id_departamento){
             $.ajax({
-                url: "<?php echo base_url('/municipios/buscar_dptoPais'); ?>" + "/" + pais,
+                url: "<?php echo base_url('/empleados/buscar_dptoPais'); ?>" + "/" + pais,
                 type: 'POST',
                 dataType: 'json',
                 success: function(res) {
                     var obtener
-                    obtener = `<option selected>Seleccionar Departamento</option>`
+                    obtener = `<select name="departamento" id="departamento" class="form-select">
+                               <option selected value="">Seleccionar Departamento</option>`
                     for (let i = 0; i < res.length; i++) {
                         obtener += `<option value='${res[i].id}'>${res[i].nombre}</option>`
                     }
                     obtener += `</select>`
+            
                     $('#departamento').html(obtener)
+                    $('#departamento').val(id_departamento)
+                    obtenerMunicipios(id_departamento)
                 }
             })
-        })
+          }
     </script>
 
 </body>
