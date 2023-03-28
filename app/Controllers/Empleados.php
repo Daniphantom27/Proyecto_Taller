@@ -165,4 +165,5 @@ class Empleados extends BaseController
         echo json_encode($municipios);
     }
 
+
 }

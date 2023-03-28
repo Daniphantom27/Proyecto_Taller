@@ -23,7 +23,6 @@
           <th>Pais</th>
           <th>Departamentos</th>
           <th>Municipio</th>
-          <th>Salarios</th>
           <th>Estado</th>
           <th colspan="2">Acciones</th>
         </tr>
@@ -39,7 +38,6 @@
             <td><?php echo $dato['nombre_pais']; ?></td>
             <td><?php echo $dato['nombre_departamento']; ?></td>
             <td><?php echo $dato['nombre_municipio']; ?></td>
-            <td><?php echo $dato['salario']; ?></td>
             <td><?php echo $dato['estado']; ?></td>
             <td><a type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo $dato['id'] . ',' . 2 ?>);">
                 <i class="bi bi-person-plus"></i></a>
@@ -128,10 +126,10 @@
                 </select>
               </div>
 
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <label for="message-text" class="col-form-label">Salario:</label>
                 <input type="text" name="salari" id="salari" class="form-control">
-              </div>
+              </div> -->
 
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Periodo:</label>
@@ -150,7 +148,7 @@
   </form>
 
   <!-- Modal Salario -->
-  <form method="POST" action="<?php echo base_url('/empleados/insertarEmpleados'); ?> " autocomplete="off">
+  <form method="POST" action="<?php echo base_url('/salarios'); ?> " autocomplete="off">
 
     <div class="modal fade" data-bs-backdrop="static" id="AgregarSalario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -184,7 +182,7 @@
 
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Salario:</label>
-                <input type="text" name="salari" id="salarisal" class="form-control">
+                <input type="text" name="salarisal" id="salarisal" class="form-control">
               </div>
 
               <div class="mb-3">
@@ -196,6 +194,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" id="btn_Guardar">Salarios</button>
           </div>
         </div>
       </div>

@@ -1016,3 +1016,37 @@ in SYSTEMPATH\Model.php on line 391.
  6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
  7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:05:28 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Models\SalariosModel.php(69): CodeIgniter\Model->update(null, [...])
+ 4 APPPATH\Controllers\Empleados.php(120): App\Models\SalariosModel->actualizar(null, '2023', null)
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->insertarEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:08:55 --> Too few arguments to function App\Controllers\Empleados::buscar_salario(), 0 passed in C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Empleados.php on line 168.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_salario()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:09:26 --> Too few arguments to function App\Controllers\Empleados::buscar_salario(), 0 passed in C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Empleados.php on line 168.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_salario()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:10:30 --> Too few arguments to function App\Controllers\Empleados::buscar_salario(), 0 passed in C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Empleados.php on line 168.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_salario()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:10:59 --> Too few arguments to function App\Controllers\Empleados::buscar_salario(), 0 passed in C:\xampp\htdocs\proyecto_dan\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Empleados.php on line 168.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->buscar_salario()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
