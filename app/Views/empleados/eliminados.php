@@ -7,7 +7,7 @@
 <body>
     <h1 class="titulo"><?php echo "Paises Eliminados"; ?></h1>
 
-    <div class="card" style="width:72rem;">
+    <div>
         <div>
         </div>
         <div class="card-body">
@@ -90,9 +90,6 @@
                             alert("No se ha Podido Activar El Registro");
                         }
                     })
-                    // $('.close').click(function() {
-                    //   $("#modal-confirma").modal("hide");
-                    // });
                 };
             </script>
 

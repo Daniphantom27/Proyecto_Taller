@@ -8,7 +8,7 @@
 
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
-    <a href="<?php echo base_url('eliminados_paises'); ?>"  class="btn btn-secondary regresar_Btn">Eliminados</a>
+    <a href="<?php echo base_url('eliminados_paises'); ?>" class="btn btn-secondary regresar_Btn">Eliminados</a>
     <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
   </div>
   <div class="table-responsive">
@@ -32,7 +32,7 @@
             <td><button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo $dato['id'] . ',' . 2 ?>);">
                 <i class="bi bi-person-plus"></i>
               </button>
-              <button type="button" class="btn btn-danger" href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma" ><i class="bi bi-trash3"></i></button>
+              <button type="button" class="btn btn-danger" href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' . $dato['id'] . '/' . 'E'; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma"><i class="bi bi-trash3"></i></button>
             </td>
           </tr>
         <?php } ?>
@@ -40,12 +40,12 @@
     </table>
   </div>
   <!-- Modal -->
-  <form id="formulario"  method="POST" action="<?php echo base_url('/paises/insertarPaises'); ?>" autocomplete="off">
+  <form id="formulario" method="POST" action="<?php echo base_url('/paises/insertarPaises'); ?>" autocomplete="off">
 
     <div class="modal fade" id="añadirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">  
+          <div class="modal-header">
             <h5 class="modal-title" id="titulo">Agregar País</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
@@ -74,23 +74,23 @@
 
   <!-- Modal Confirma Eliminar -->
   <div class="modal fade" id="modal-confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div style="background: linear-gradient(90deg, #838da0, #b4c1d9);" class="modal-content">
-                <div style="text-align:center;" class="modal-header">
-                    <h5 style="color:#98040a;font-size:20px;font-weight:bold;" class="modal-title" id="exampleModalLabel">Eliminación de Registro</h5>
-                   
-                </div>
-                <div style="text-align:center;font-weight:bold;" class="modal-body">
-                    <p>Seguro Desea Eliminar éste Registro?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary close" data-bs-dismiss="modal">No</button>
-                    <a class="btn btn-danger btn-ok">Si</a>
-                </div>
-            </div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div style="background: linear-gradient(90deg, #838da0, #b4c1d9);" class="modal-content">
+        <div style="text-align:center;" class="modal-header">
+          <h5 style="color:#98040a;font-size:20px;font-weight:bold;" class="modal-title" id="exampleModalLabel">Eliminación de Registro</h5>
+
         </div>
+        <div style="text-align:center;font-weight:bold;" class="modal-body">
+          <p>Seguro Desea Eliminar éste Registro?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary close" data-bs-dismiss="modal">No</button>
+          <a class="btn btn-danger btn-ok">Si</a>
+        </div>
+      </div>
     </div>
-       <!-- Modal Elimina -->
+  </div>
+  <!-- Modal Elimina -->
 
   <script>
     function seleccionaPaises(id, tp) {
@@ -122,24 +122,20 @@
   </script>
 
   <script>
-    $('#modal-confirma').on('show.bs.modal', function(e){
+    $('#modal-confirma').on('show.bs.modal', function(e) {
       $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     })
   </script>
-<script>
-  const formulario = document.getElementById('formulario');
+<!--   <script>
+    const formulario = document.getElementById('formulario');
 
-  // formulario.addEventListener('submit', function(e) {
-  //   if(codigo == "" && nombre == ""){
-  //     Alert(e)
-  //   }else{
-  //     Alert2(e)
-  //   }
+    formulario.addEventListener('submit', function(e) {
+      if (('#codigo') == " " && ('#nombre') == " ") {
+       console.log("Error esta vacio");
+      } else {
+        Alert();
+      }
 
-  // })
-
-</script>
-
-
-
+    })
+  </script> -->
 </body>

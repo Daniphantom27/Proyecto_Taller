@@ -31,16 +31,6 @@ class Municipios extends BaseController
         //echo view('/principal/principal',$data); //mostramos la vista desde el controlador y le enviamos la data necesaria, en este caso, estamos enviando el titulo
     }
 
-    /* public function insertarMun(){
-            if($this->request -> getMethod() == 'post'){
-                $this->municipios->save([
-                    'id_departamento'=>$this->request->getPost('departamento'),   
-                    'nombre'=>$this->request->getPost('nombre')
-                ]);
-                return redirect()->to(base_url('/municipios'));
-            }
-        } */
-
     public function buscar_Municipios($id)
     {
         $returnData = array();

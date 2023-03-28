@@ -10,7 +10,7 @@
     <a type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo 1 . ',' . 1 ?>);">Agregar</a>
     <a href="<?php echo base_url('/empleados/eliminados'); ?>" class="btn btn-secondary regresar_Btn">Eliminados</a>
     <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
-  </div>
+  </div>  
   <div class="table-responsive">
     <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
       <thead>
@@ -43,11 +43,15 @@
             <td><?php echo $dato['estado']; ?></td>
             <td><a type="button" class="btn btn-info" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo $dato['id'] . ',' . 2 ?>);">
                 <i class="bi bi-person-plus"></i></a>
+
               <button type="button" href="#" data-href="<?php echo base_url('/empleados/eliminar') . '/' . $dato['id'] . '/' . 'E'; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+
+              <a type="button" class="btn btn-success" data-bs-toggle="modal" id="btn_guardar" data-bs-  target="#AgregarSalario" onclick="seleccionaSalarios(<?php echo $dato['id'] . ',' . 2 ?>);">
+              <i class="bi bi-currency-dollar"></i></a>
             </td>
           </tr>
         <?php } ?>
-      </tbody>
+      </tbody>  
     </table>
   </div>
 
@@ -145,6 +149,62 @@
     </div>
   </form>
 
+  <!-- Modal Salario -->
+  <form method="POST" action="<?php echo base_url('/empleados/insertarEmpleados'); ?> " autocomplete="off">
+
+    <div class="modal fade" data-bs-backdrop="static" id="AgregarSalario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" name="titulo" id="titulosal">Salario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+            <div class="mb-3">
+                <label for="message-text" class="col-form-label">Nombre:</label>
+                <input type="text" name="nombre" class="form-control" id="nombresal">
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Apellido:</label>
+                <input type="text" name="apellido" id="apellidosal" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Cargo:</label>
+                <input id="id_salas" name="id_salas" hidden>
+                <input id="tp" name="tp" hidden>
+                <input id="id" name="id" hidden>
+                <select name="cargo" id="cargosa" class="form-select">
+                  <option selected selected value="">Seleccionar Cargo</option>
+                  <?php foreach ($cargos as $dato) { ?>
+                    <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Salario:</label>
+                <input type="text" name="salari" id="salarisal" class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Periodo:</label>
+                <input type="text" name="periodo" id="periodosa" class="form-control">
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" id="btn_Guardarsal">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form> 
+
+
+
   <!-- Modal Confirma Eliminar -->
   <div class="modal fade" id="modal-confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -206,6 +266,35 @@
         $("#nacimiento").val('');
         $("#btn_Guardar").text('Guardar');
         $("#titulo").text('Agregar Empleado');
+
+      }
+    };
+  </script>
+
+<script>
+    function seleccionaSalarios(id, tp) {
+      if (tp == 2) {
+        dataURL = "<?php echo base_url('/empleados/buscar_Empleados'); ?>" + "/" + id;
+        $.ajax({
+          type: "POST",
+          url: dataURL,
+          dataType: "json",
+          success: function(rs) {   
+            $("#tp").val(2);
+            $("#id").val(id);
+            $("#nombresal").val(rs[0]['nombre']);
+            $("#apellidosal").val(rs[0]['apellidos']);
+            $("#salarisal").val(rs[0]['salario']);
+            $("#cargosa").val(rs[0]['id_cargo']);
+            $("#id_salas").val(rs[0]['id_salario']);
+            $("#periodosa").val(rs[0]['periodo']);
+            $("#btn_Guardarsal").text('Ver');
+            $("#titulosal").text('Mostrar Salarios');
+            $("#AgregarSalario").modal("show");
+          }
+        })  
+      } else {
+        console.log("HOLA")
 
       }
     };

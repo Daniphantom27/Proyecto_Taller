@@ -9,7 +9,7 @@
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#agregarCargo" onclick="seleccionaCargos(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
     <a href="<?php echo base_url('eliminados_cargos'); ?>"  class="btn btn-secondary regresar_Btn">Eliminados</a>
-    <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
+    <a href="<?php echo base_url('/home'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
   </div>
   <div class="table-responsive">
     <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">

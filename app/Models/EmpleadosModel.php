@@ -51,6 +51,15 @@ class EmpleadosModel extends Model{
         return $datos;
     }
 
+    /* public function traer_Sal($id){
+        $this->select('empleados.*,cargos.nombre as nombre_cargo, salarios.sueldo as salario, salarios.id as id_salario, salarios.periodo as periodo');
+        $this->join('salarios', 'salarios.id_empleado = empleados.id', 'left');
+        $this->join('cargos','cargos.id = empleados.id_cargo');
+        $this->where('empleados.id', $id);
+        $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
+        return $datos;
+    } */
+
     public function eliminarEmpleados($id, $estado)
     {
         $datos = $this->update($id, ['estado' => $estado]);
@@ -66,6 +75,15 @@ class EmpleadosModel extends Model{
         $this->join('salarios', 'salarios.id_empleado = empleados.id', 'left');
         $this->join('cargos','cargos.id = empleados.id_cargo');
         $this->where('empleados.estado', "E");
+        $this->orderBy('empleados.id');
+        $datos = $this->findAll();
+        return $datos;
+    }
+
+    public function salarios_empleados(){
+        $this->select('salarios.*, salarios.sueldo as salario, salarios.id as id_salario, salarios.periodo as periodo, id_empleado');
+        $this->join('salarios', 'salarios.id_empleado = empleados.id', 'left');
+        $this->where('empleados.estado', "A");
         $this->orderBy('empleados.id');
         $datos = $this->findAll();
         return $datos;

@@ -13,7 +13,7 @@ class SalariosModel extends Model{
     protected $returnType     = 'array';  /* forma en que se retornan los datos */
     protected $useSoftDeletes = false; /* si hay eliminacion fisica de registro */
 
-    protected $allowedFields = ['nombre','estado','periodo','fecha_crea','id_empleado', 'sueldo']; /* relacion de campos de la tabla */
+    protected $allowedFields = ['estado','periodo','fecha_crea','id_empleado', 'sueldo']; /* relacion de campos de la tabla */
 
     protected $useTimestamps = true; /*tipo de tiempo a utilizar */
     protected $createdField  = 'fecha_crea'; /*fecha automatica para la creacion */
@@ -24,6 +24,14 @@ class SalariosModel extends Model{
     protected $validationMessages = [];
     protected $skipValidation    = false;
 
+    public function obtenerSalarios(){
+        $this->select('salarios.*, empleados.nombre as nombre_empleado');
+        $this->join('empleados','empleados.id = salarios.id_empleado');
+        $this->where('salarios.estado', 'A');
+        $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
+        return $datos;
+    }
+
      public function traer_Salarios($id){
         $this->select('salarios.*');
         $this->where ('id',$id);
@@ -31,7 +39,22 @@ class SalariosModel extends Model{
         return $datos;
     } 
 
-    public function guardar($sueldo, $periodo, $id_empleado)
+    public function eliminarSalarios($id, $estado)
+    {
+        $datos = $this->update($id, ['estado' => $estado]);
+        return $datos;
+    }
+
+    public function eliminados_salarios(){
+        $this->select('salarios.*, empleados.nombre as nombre_empleado');
+        $this->join('empleados','empleados.id = salarios.id_empleado');
+        $this->where('salarios.estado', 'E');
+        $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
+        return $datos;
+    }
+
+
+    public function guardar ($sueldo, $periodo, $id_empleado)
     {
         $this->save([
             'id_empleado' => $id_empleado,
@@ -41,14 +64,15 @@ class SalariosModel extends Model{
         ]);
     }
 
-    public function actualizar($sueldo, $periodo,$salario)
+    public function actualizar ($sueldo, $periodo,$salario)
     {
         $this->update(
             $salario,
             [
                 'sueldo' => $sueldo,
-                'periodo' => $periodo
+                'periodo' => $periodo,
             ]
         );
     }
+
 }
