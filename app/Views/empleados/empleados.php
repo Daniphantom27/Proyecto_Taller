@@ -4,7 +4,7 @@
 </head>
 
 <body>
-  <h1 class="titulo"><?php echo "Administrar Empleados"; ?></h1>
+  <h1 class="titulo" style="font-family: monospace"><?php echo "Administrar Empleados"; ?></h1>
 
   <div>
     <a type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleados(<?php echo 1 . ',' . 1 ?>);">Agregar</a>
@@ -196,7 +196,6 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary" id="btn_Guardarsal">Guardar</button>
           </div>
         </div>
       </div>
@@ -288,7 +287,6 @@
             $("#cargosa").val(rs[0]['id_cargo']);
             $("#id_salas").val(rs[0]['id_salario']);
             $("#periodosa").val(rs[0]['periodo']);
-            $("#btn_Guardarsal").text('Ver');
             $("#titulosal").text('Mostrar Salarios');
             $("#AgregarSalario").modal("show");
           }

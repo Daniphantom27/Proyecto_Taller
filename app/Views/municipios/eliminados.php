@@ -5,7 +5,7 @@
 </head>
 
 <body>
-<h1 class="titulo"><?php echo "Municipios Eliminados"; ?></h1>
+<h1 class="titulo" style="font-family: monospace"><?php echo "Municipios Eliminados"; ?></h1>
 
   <div>
     <div>

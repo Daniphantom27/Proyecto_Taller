@@ -4,7 +4,7 @@
 </head>
 
 <body>
-  <h1 class="titulo"><?php echo "Administrar Salarios"; ?></h1>
+  <h1 class="titulo" style="font-family: monospace"><?php echo "Administrar Salarios"; ?></h1>
 
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarSalario" onclick="seleccionaSalarios(<?php echo 1 . ',' . 1 ?>);">Agregar</button>

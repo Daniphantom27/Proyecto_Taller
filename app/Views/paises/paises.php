@@ -4,10 +4,10 @@
 </head>
 
 <body>
-  <h1 class="titulo"><?php echo "Administrar Paises"; ?></h1>
+  <h1 class="titulo" style="font-family: monospace"><?php echo "Administrar Paises"; ?></h1>
 
   <div>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
+    <button type="button" class="btn btn-success" font-family: monospace; data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
     <a href="<?php echo base_url('eliminados_paises'); ?>" class="btn btn-secondary regresar_Btn">Eliminados</a>
     <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
   </div>
@@ -53,13 +53,13 @@
             <form>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Codigo:</label>
-                <input type="text" class="form-control" name="codigo" id="codigo">
+                <input type="text" maxlength="4" class="form-control" name="codigo" id="codigo" require>
                 <input id="tp" name="tp" hidden>
                 <input id="id" name="id" hidden>
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name='nombre'>
+                <input type="text" class="form-control" id="nombre" name='nombre' require>
               </div>
             </form>
           </div>

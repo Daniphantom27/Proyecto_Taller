@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    background: #d5ac67;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    align-items: center;
+}

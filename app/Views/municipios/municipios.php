@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    <h1 class="titulo"><?php echo "Administrar Municipios"; ?></h1>
+    <h1 class="titulo" style="font-family: monospace"><?php echo "Administrar Municipios"; ?></h1>
 
     <div>
         <a type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaMunicipios(<?php echo 1 . ',' . 1 ?>);">Agregar</a>

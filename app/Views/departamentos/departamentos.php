@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <h1 class="titulo"><?php echo "Administrar Departamentos"; ?></h1>
+    <h1 class="titulo" style="font-family: monospace"><?php echo "Administrar Departamentos"; ?></h1>
 
     <div>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaDepartamentos(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
