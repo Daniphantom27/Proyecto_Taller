@@ -11,8 +11,9 @@
     width: 7rem;
     text-align: center;
     background: #131d39;
-} 
-.pais_actu{
+}
+
+.pais_actu {
     background: #131d39;
 }
 
@@ -20,8 +21,8 @@
     /* font-family: cursive !important; */
     margin: 30px;
     text-align: center;
-    
 }
-.paises_table{
+
+.paises_table {
     font-family: monospace bold;
 }

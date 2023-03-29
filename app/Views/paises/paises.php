@@ -38,7 +38,7 @@
             </td>
           </tr>
         <?php } ?>
-      </tbody>
+      </tbody> 
     </table>
   </div>
   <!-- Modal -->
@@ -55,7 +55,7 @@
             <form>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Codigo:</label>
-                <input type="text" maxlength="4" class="form-control" name="codigo" id="codigo" require>
+                <input type="text" maxlength="3" class="form-control" name="codigo" id="codigo" require>
                 <input id="tp" name="tp" hidden>
                 <input id="id" name="id" hidden>
               </div>
