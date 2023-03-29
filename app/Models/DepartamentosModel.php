@@ -28,6 +28,7 @@ class DepartamentosModel extends Model{
         $this->select('departamentos.*,paises.nombre as nombre_pais');
         $this->join('paises','paises.id = departamentos.id_pais');
         $this->where('departamentos.estado', 'A');
+        $this->where('paises.estado', 'A');
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
         return $datos;  
     }

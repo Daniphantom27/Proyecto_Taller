@@ -26,6 +26,7 @@ class PaisesModel extends Model{
 
     public function obtenerPaises(){
         $this->select('paises.*');
+        $this->where('paises.estado', 'A');
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
         return $datos;
     }

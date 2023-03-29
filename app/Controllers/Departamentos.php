@@ -19,7 +19,7 @@ class Departamentos extends BaseController
     public function index()
     {
         $departamentos = $this->departamentos->obtenerDepartamento();
-        $paises = $this->paises->findAll();
+        $paises = $this->paises->obtenerPaises('A');
         $data = ['titulo' => 'Proyecto Taller', 'nombre' => 'Daniel Sanchez', 'departamentos' => $departamentos, 'paises' => $paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
         echo view('/principal/header', $data);
         echo view('/departamentos/departamentos', $data);

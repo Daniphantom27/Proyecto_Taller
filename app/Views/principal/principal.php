@@ -1,4 +1,4 @@
-<body bgcolor="black">
+<body>
 <h1 style="text-align:center;"><?php echo $titulo; ?></h1>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -9,9 +9,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="<?php echo base_url(); ?>/clientes">Clientes</a>
-        <a class="nav-link " aria-current="page" href="<?php echo base_url(); ?>/monedas">Tipo de Moneda</a>
-        <a class="nav-link " aria-current="page" href="<?php echo base_url(); ?>/prestamos">Prestamos</a>
       </div>
     </div>
   </div>

@@ -34,6 +34,8 @@ class EmpleadosModel extends Model{
         $this->join('salarios', 'salarios.id_empleado = empleados.id', 'left');
         $this->join('cargos','cargos.id = empleados.id_cargo');
         $this->where('empleados.estado', 'A');
+        $this->where('salarios.estado', 'A');
+        $this->where('paises.estado', 'A');
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
         return $datos; 
 

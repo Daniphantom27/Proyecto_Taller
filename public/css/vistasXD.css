@@ -5,15 +5,23 @@
     font-size: 25px;
 }
 
-.regresar_btn {
-    height: 2.5rem;
+.paises_btn {
+    width: 100px;
+    border-radius: 20px;
     width: 7rem;
     text-align: center;
+    background: #131d39;
+} 
+.pais_actu{
+    background: #131d39;
 }
 
 .table-responsive {
     /* font-family: cursive !important; */
     margin: 30px;
     text-align: center;
-    font-size: 25px;
+    
+}
+.paises_table{
+    font-family: monospace bold;
 }

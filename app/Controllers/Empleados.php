@@ -31,11 +31,11 @@ class Empleados extends BaseController
     }
     public function index()
     {
-        $salarios = $this->salarios->obtenerSalarios();
-        $departamentos = $this->departamentos->obtenerDepartamento();
-        $paises = $this->paises->obtenerPaises();
+        $salarios = $this->salarios->obtenerSalarios('A');
+        $departamentos = $this->departamentos->obtenerDepartamento('A');
+        $paises = $this->paises->obtenerPaises('A');
         $empleados = $this->empleados->obtenerEmpleados();
-        $municipios = $this->municipios->obtenerMunicipios();
+        $municipios = $this->municipios->obtenerMunicipios('A');
         $cargos = $this->cargos->where('estado', 'A')->findAll();
         $data = ['titulo' => 'Proyecto Taller', 'nombre' => 'Daniel Sanchez', 'empleados' => $empleados, 'cargos' => $cargos, 'municipios' => $municipios, 'paises' => $paises, 'departamentos' => $departamentos, 'salarios' => $salarios]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
         echo view('/principal/header', $data);

@@ -22,7 +22,7 @@ class Municipios extends BaseController
     public function index()
     {
         $municipios = $this->municipios->obtenerMunicipios();
-        $departamentos = $this->departamentos->findAll();
+        $departamentos = $this->departamentos->obtenerDepartamento('A');
         $paises = $this->paises->where('estado', "A")->obtenerPaises();
         $data = ['titulo' => 'Proyecto Taller', 'nombre' => 'Daniel Sanchez', 'municipios' => $municipios, 'departamentos' => $departamentos, 'paises'=> $paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
         echo view('/principal/header', $data);
