@@ -42,9 +42,12 @@
         <li class="nav-item" >
           <a style="color:black" class="nav-link" href="<?php echo base_url('/cargos'); ?>" tabindex="-1"> <i class="bi bi-clipboard-fill"></i> Cargos </a>
         </li>
+        <li class="nav-item" >
+          <a style="color:black" class="nav-link" href="<?php echo base_url('/usuarios'); ?>" tabindex="-1"> <i class="bi bi-person-circle"></i> Usuarios </a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link e fs-5 font-monospace" style="color:black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-person-circle"></i> Empleados
+          <i class="bi bi-briefcase-fill"></i> Empleados
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #ffffff;">
             <li><a class="dropdown-item fs-5 font-monospace" href="<?php echo base_url('/empleados'); ?>">Administrar</a></li>

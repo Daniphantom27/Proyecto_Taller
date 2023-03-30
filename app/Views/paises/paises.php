@@ -4,14 +4,14 @@
 </head>
 
 <body style="background:#9f8756">
-  <h1 class="titulo" style="font-family:monospace bold; font-size:40px" ><?php echo "Administrar Paises"; ?></h1><br>
+  <h1 class="titulo" style="font-family:monospace bold; font-size:40px"><?php echo "Administrar Paises"; ?></h1><br>
 
   <div>
     <button style="font-family: monospace" type="button" class="btn btn-secondary fs-5 paises_btn" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);"><i class="bi bi-house-add-fill"></i></button>
 
-    <a  style="font-family: monospace" href="<?php echo base_url('eliminados_paises'); ?>" class="btn btn-secondary paises_btn fs-5"><i class="bi bi-trash3-fill"></i></a>
-    
-    <a  style="font-family: monospace" href="<?php echo base_url('/principal'); ?>" class="btn btn-secondary fs-5 paises_btn"><i class="bi bi-arrow-bar-left"></i></a>
+    <a style="font-family: monospace" href="<?php echo base_url('eliminados_paises'); ?>" class="btn btn-secondary paises_btn fs-5"><i class="bi bi-trash3-fill"></i></a>
+
+    <a style="font-family: monospace" href="<?php echo base_url('/principal'); ?>" class="btn btn-secondary fs-5 paises_btn"><i class="bi bi-arrow-bar-left"></i></a>
   </div>
   <div class="table-responsive paises_table">
     <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -32,13 +32,13 @@
             <td><?php echo $dato['nombre']; ?></td>
             <td><?php echo $dato['estado']; ?></td>
             <td><button type="button" class="btn btn-secondary pais_actu" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#añadirModal" onclick="seleccionaPaises(<?php echo $dato['id'] . ',' . 2 ?>);">
-            <i class="bi bi-pencil-fill"></i>
+                <i class="bi bi-pencil-fill"></i>
               </button>
               <button type="button" class="btn btn-danger" href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' . $dato['id'] . '/' . 'E'; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma"><i class="bi bi-person-x-fill"></i></button>
             </td>
           </tr>
         <?php } ?>
-      </tbody> 
+      </tbody>
     </table>
   </div>
   <!-- Modal -->
@@ -61,7 +61,7 @@
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name='nombre' require>
+                <input type="text" class="form-control" id="nombre" name='nombre'>
               </div>
             </form>
           </div>
@@ -128,16 +128,4 @@
       $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     })
   </script>
-<!--   <script>
-    const formulario = document.getElementById('formulario');
-
-    formulario.addEventListener('submit', function(e) {
-      if (('#codigo') == " " && ('#nombre') == " ") {
-       console.log("Error esta vacio");
-      } else {
-        Alert();
-      }
-
-    })
-  </script> -->
 </body>

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController; /*la plantilla del controlador general de codeigniter */
 use App\Models\PaisesModel;
+use CodeIgniter\Exceptions\AlertError;
 
 class Paises extends BaseController
 {
@@ -52,12 +53,19 @@ class Paises extends BaseController
                     'codigo' => $this->request->getPost('codigo'),
                     'nombre' => $this->request->getPost('nombre')
                 ]);
+
+                /* if('codigo'=="" || 'nombre'==""){
+                    alert("LOS CAMPOS SON OBLIGATORIOS");
+                }else{
+                    alert("ESTA BIEN");
+                }
+             */
             } else {
                 $this->paises->update($this->request->getPost('id'), [
                     'nombre' => $this->request->getPost('nombre'),
                     'codigo' => $this->request->getPost('codigo'),
                 ]);
-            }
+            }   
             return redirect()->to(base_url('/paises'));
         }
     }
