@@ -10,7 +10,7 @@
         <button style="font-family: monospace" type="button" class="btn btn-secondary fs-5 paises_btn" data-bs-toggle="modal" data-bs-target="#añadirModal" onclick="seleccionaUsuarios(<?php echo 1 . ',' . 1 ?>);"><i class="bi bi-house-add-fill"></i></button>
 
         <a style="font-family: monospace" href="<?php echo base_url('usuarios/eliminados'); ?>" class="btn btn-secondary paises_btn fs-5"><i class="bi bi-trash3-fill"></i></a>
-
+ 
         <a style="font-family: monospace" href="<?php echo base_url('/principal'); ?>" class="btn btn-secondary fs-5 paises_btn"><i class="bi bi-arrow-bar-left"></i></a>
     </div>
     <div class="table-responsive paises_table">

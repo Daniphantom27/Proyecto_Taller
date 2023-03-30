@@ -95,6 +95,7 @@
   <!-- Modal Elimina -->
 
   <script>
+
     function seleccionaPaises(id, tp) {
       if (tp == 2) {
         dataURL = "<?php echo base_url('/paises/buscar_Paises'); ?>" + "/" + id;
@@ -111,6 +112,7 @@
             $("#titulo").text('Editar País');
             $("#añadirModal").modal("show");
           }
+          
         })
       } else {
         $("#tp").val(1);
