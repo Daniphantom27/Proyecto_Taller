@@ -11,7 +11,7 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Principal');
+$routes->setDefaultController('Login');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -29,7 +29,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Principal::index');
+$routes->get('/login', 'Login::index');
 $routes->get('eliminados_paises', 'paises::eliminados');
 $routes->get('eliminados_departamentos', 'departamentos::eliminados');
 $routes->get('eliminados_municipios', 'municipios::eliminados');
@@ -37,6 +37,8 @@ $routes->get('eliminados_departamentos', 'departamentos::eliminados');
 $routes->get('eliminados_cargos', 'cargos::eliminados');
 $routes->get('eliminados_empleados', 'empleados::eliminados');
 $routes->get('salarios_empleados', 'empleados::salarios');
+$routes->get('eliminados_usuarios', 'usuarios::eliminados');
+
 
 
 

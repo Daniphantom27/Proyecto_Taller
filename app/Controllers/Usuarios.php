@@ -28,7 +28,7 @@ class Usuarios extends BaseController
     {
         $returnData = array();
         $usuarios_ = $this->usuarios->traer_usuarios($id);
-        if (!empty($usuarios_)) {
+        if (!empty($usuarios_)) {   
             array_push($returnData, $usuarios_);
         }
         echo json_encode($returnData);

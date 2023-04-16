@@ -26,10 +26,15 @@ class UsuariosModel extends Model{
 
     public function obtenerUsuarios(){
         $this->select('usuarios.*');
-        $this->where('usuarios.estado', 'A');
+        $this->where('usuarios.estado', 'A',);
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
         return $datos;
     }
+   public function obtenerUsuario($data){
+        $Usuario = $this->db->table('n_identidad');
+        $Usuario->where($data);
+        return $Usuario->get()->getResultArray();
+    } 
 
     public function traer_usuarios($id){
         $this->select('usuarios.* ');
@@ -47,5 +52,5 @@ class UsuariosModel extends Model{
         $this->select('usuarios.*');
         $this->where('estado',"E")->findAll();
     } 
-
 }
+

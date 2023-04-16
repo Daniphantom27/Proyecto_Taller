@@ -42,7 +42,7 @@
     </table>
   </div>
   <!-- Modal -->
-  <form id="formulario" method="POST" action="<?php echo base_url('/paises/insertarPaises'); ?>" autocomplete="off">
+  <form id="formulario" method="POST" action="<?php echo base_url('/paises/insertarPaises'); ?>" autocomplete="off" onsubmit="return validarPais()">
 
     <div class="modal fade" id="añadirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -55,7 +55,7 @@
             <form>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Codigo:</label>
-                <input type="text" maxlength="3" class="form-control" name="codigo" id="codigo" require>
+                <input type="text" maxlength="3" pattern="[0-9]+"  class="form-control" name="codigo" id="codigo">
                 <input id="tp" name="tp" hidden>
                 <input id="id" name="id" hidden>
               </div>
@@ -95,7 +95,6 @@
   <!-- Modal Elimina -->
 
   <script>
-
     function seleccionaPaises(id, tp) {
       if (tp == 2) {
         dataURL = "<?php echo base_url('/paises/buscar_Paises'); ?>" + "/" + id;
@@ -112,12 +111,12 @@
             $("#titulo").text('Editar País');
             $("#añadirModal").modal("show");
           }
-          
+
         })
       } else {
         $("#tp").val(1);
-        $("#codigo").val('');
         $("#id").val('');
+        $("#codigo").val('');
         $("#nombre").val('');
         $("#btn_Guardar").text('Guardar');
         $("#titulo").text('Agregar País');
@@ -130,4 +129,25 @@
       $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     })
   </script>
+  
+  <script>
+    function validarPais(rs) {
+      var nomb = document.getElementById('nombre');
+      var codi = document.getElementById('codigo');
+
+      console.log(nomb.value);
+
+
+      if (nomb.value == "" || codi.value == "") {
+        Swal.fire(
+          'ERROR',
+          '!Todos los campos son obligatorios!',
+          'error'
+        )
+        return false;
+      }
+
+    }
+  </script>
+
 </body>
