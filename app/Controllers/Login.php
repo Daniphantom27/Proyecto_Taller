@@ -46,6 +46,6 @@ class Login extends BaseController
             }
         }
 
-    
+        // 'contraseña' =>password_hash($this->request->getVar('contraseña'), PASSWORD_BCRYPT)
 
 }
